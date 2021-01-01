@@ -15,7 +15,7 @@ export const useStyles = makeStyles((theme) => ({
       whiteSpace: 'nowrap',
       width: '150px',
       fontSize: "1.5rem",
-      color: colors.darkColor,
+      color: colors.secondaryColor,
       lineHeight: '1.5rem',
       margin: '0 20% 0 20%',
       position:'relative',

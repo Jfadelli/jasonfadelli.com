@@ -6,6 +6,8 @@ const theme = {
     text: colors.darkColor,
     bg: colors.secondaryColor,
     dark: colors.darkColor,
+    main: colors.primaryColor,
+    alt: colors.secondaryColor
 }
 
 export const useStyles = makeStyles(() => ({
@@ -226,16 +228,25 @@ export const useStyles = makeStyles(() => ({
             fontSize: '1.25rem',
             margin: '0 0 .5rem',
             maxWidth: '400px',
+            textAlign: 'center',
         },
         '& button':{
             margin: '2rem 2rem 2rem 150px',
             fontSize: '1.25rem',
             fontWeight: '600',
-            height: '30px',
+            height: '40px',
             width: '120px',
-            color: colors.primaryColor,
-            backgroundColor: colors.secondaryColor,
-            borderRadius: '4px'
+            color: theme.main,
+            backgroundColor: theme.alt,
+            border: '2px dotted '+ theme.main,
+            borderRadius: '4px',
+            '&:hover':{
+                color: theme.alt,
+                backgroundColor: theme.main,
+                border: '2px dotted '+ theme.dark,
+                cursor: 'pointer'
+
+            }
         },
         '& input':{
             display: 'flex',
@@ -243,8 +254,8 @@ export const useStyles = makeStyles(() => ({
             outline: 'none',
             width: 'auto',
             height: '2.0rem',
-            border: '2px solid rgb(185, 185, 185)',
-            borderRadius: '4px',
+            border: '2px solid '+ theme.main,
+            borderRadius: '1px',
             fontSize: '1.25rem',
             maxWidth: '400px',
             minWidth: '400px',
@@ -254,11 +265,14 @@ export const useStyles = makeStyles(() => ({
             display: 'block',
             width:' 400px',
             overflow: 'hidden',
-            maxWidth: '400px',
+            maxWidth: '380px',
             minHeight: '6rem',
             lineHeight: '20px',
             fontSize: '1.5rem',
-            backgroundColor: colors.secondaryColor
+            backgroundColor: theme.main,
+            border: '1px solid '+ theme.dark,
+            padding: '10px',
+
         }
  
     },

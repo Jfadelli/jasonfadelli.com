@@ -23,6 +23,7 @@ export default function Home() {
         </div> 
           <section className={classes.content}>
             <SocialMedia/>
+            <br/>
           </section>
           
           <hr />
