@@ -9,17 +9,18 @@ export const useStyles = makeStyles((theme) => ({
       zIndex: 'auto'
     },
     navButton: {
-      fontFamily: 'Arial, Helvetica, sans-serif',
+      fontFamily: 'Tahoma, Arial, Helvetica, sans-serif',
       display: 'flex',
-      fontWeight:'700',
+      fontWeight:'550',
       whiteSpace: 'nowrap',
       width: '150px',
       fontSize: "1.5rem",
-      color: colors.secondaryColor,
+      color: colors.alt,
       lineHeight: '1.5rem',
       margin: '0 20% 0 20%',
       position:'relative',
       zIndex: '6000',
+      textTransform: 'none'
     },
     link:{
         color: "black",

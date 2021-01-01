@@ -1,9 +1,17 @@
-const colors = { 
-    primaryColor: '#55d6be', //turquose
-    secondaryColor: '#effbf9', //mint cream
+// const colors = { 
+//     main: '#55d6be', //turquose
+//     alt: '#effbf9', //mint cream
+//     accentColor: '#eca72c', // marigold
+//     dark: '#1c1c1c', // eerie black
+//     darkAlt: '#F8FAF0', // ivory
+// }
+
+const colors = {
+    main: '#66C7F4', //turquose
+    alt: '#FF1053', //mint cream
     accentColor: '#eca72c', // marigold
-    darkColor: '#1c1c1c', // eerie black
-    darkAccent: '#F8FAF0', // ivory
+    dark: '#1c1c1c', // eerie black
+    darkAlt: '#F8FAF0', // ivory
 }
 
 export { 

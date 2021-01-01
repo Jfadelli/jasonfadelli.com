@@ -1,23 +1,11 @@
 import { makeStyles } from '@material-ui/styles'
 import { colors } from './colors'
-import bg from '../static/bg.jpg'
 
-const theme = {
-    text: colors.darkColor,
-    bg: colors.secondaryColor,
-    dark: colors.darkColor,
-    main: colors.primaryColor,
-    alt: colors.secondaryColor
-}
 
 export const useStyles = makeStyles(() => ({
     app:{
-        fontFamily: 'Arial, Helvetica, sans-serif',
-        // backgroundImage: `url(${bg})`,
-        // backgroundPosition: 'center',
-        // backgroundRepeat: 'no-repeat',
-        // backgroundSize: 'cover',
-        backgroundColor: theme.bg,
+        fontFamily: 'Tahoma, Arial, Helvetica, sans-serif',
+        backgroundColor: colors.alt,
         height: '100%',
         minHeight: '100vh'
     },
@@ -39,7 +27,7 @@ export const useStyles = makeStyles(() => ({
     },
 
     header:{
-        color: colors.secondaryColo,
+        color: colors.alt,
         display: 'flex',
         flexDirection:'column',
         justifyContent: 'center',
@@ -51,7 +39,7 @@ export const useStyles = makeStyles(() => ({
         display: 'flex',
         flexDirection:'column',
         justifyContent: 'center',
-        color: theme.text,
+        color: colors.dark,
         fontSize: '1rem',
         '& h1':{
             fontSize: '4rem',
@@ -108,7 +96,7 @@ export const useStyles = makeStyles(() => ({
 
     link:{
         textDecoration: 'none',
-        color: colors.accentColor,
+        color: colors.alt,
         fontWeight: '500',
         fontSize: '1.5rem',
         textAlign:'center',
@@ -116,14 +104,14 @@ export const useStyles = makeStyles(() => ({
         lineHeight: '3rem',
         width: '50%',
         '&:hover':{
-            color: colors.primaryColor,
+            color: colors.main,
             borderBottom: 'dotted rgb(230 70 1) 1px'
         }
     },
 
     linkToLoopnet:{
         textDecoration: 'none',
-        color: colors.secondaryColor,
+        color: colors.alt,
         fontWeight: '400',
         fontSize: '2rem', 
         margin: '0 0 2vh 0',
@@ -136,7 +124,7 @@ export const useStyles = makeStyles(() => ({
     // decorations
     horizLine:{
         margin: '1vh auto 4vh auto',
-        border: '1px dotted '+ theme.dark,
+        border: '1px dotted '+ colors.dark,
         borderRadius: '90px',
         maxWidth: '1024px',
         width: '100%'
@@ -181,7 +169,7 @@ export const useStyles = makeStyles(() => ({
         padding: "0rem",
     },
     subHeading:{
-        font: colors.darkColor,
+        font: colors.dark,
         margin: '2rem 0',
         textAlign: 'center',
     },
@@ -204,7 +192,7 @@ export const useStyles = makeStyles(() => ({
         flexDirection: 'row',
         justifyContent: 'center',
 
-        backgroundColor: colors.primaryColor,
+        backgroundColor: colors.main,
         height: '3.5rem',
         margin: '1rem 0 2rem',
         position: 'relative',
@@ -236,14 +224,14 @@ export const useStyles = makeStyles(() => ({
             fontWeight: '600',
             height: '40px',
             width: '120px',
-            color: theme.main,
-            backgroundColor: theme.alt,
-            border: '2px dotted '+ theme.main,
+            color: colors.main,
+            backgroundColor: colors.alt,
+            border: '2px dotted '+ colors.main,
             borderRadius: '4px',
             '&:hover':{
-                color: theme.alt,
-                backgroundColor: theme.main,
-                border: '2px dotted '+ theme.dark,
+                color: colors.alt,
+                backgroundColor: colors.main,
+                border: '2px dotted '+ colors.dark,
                 cursor: 'pointer'
 
             }
@@ -254,7 +242,7 @@ export const useStyles = makeStyles(() => ({
             outline: 'none',
             width: 'auto',
             height: '2.0rem',
-            border: '2px solid '+ theme.main,
+            border: '2px solid '+ colors.main,
             borderRadius: '1px',
             fontSize: '1.25rem',
             maxWidth: '400px',
@@ -269,8 +257,8 @@ export const useStyles = makeStyles(() => ({
             minHeight: '6rem',
             lineHeight: '20px',
             fontSize: '1.5rem',
-            backgroundColor: theme.main,
-            border: '1px solid '+ theme.dark,
+            backgroundColor: colors.main,
+            border: '1px solid '+ colors.dark,
             padding: '10px',
 
         }

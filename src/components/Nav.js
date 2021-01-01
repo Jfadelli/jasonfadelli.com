@@ -1,8 +1,6 @@
 import React from 'react';
 import Toolbar from '@material-ui/core/Toolbar';
 
-import Logo from '../static/logo.jpg'
-
 import { useMediaQuery } from '../hooks/mediaQuery'
 import { useStyles } from '../style/style'
 

@@ -3,8 +3,6 @@ import React from 'react';
 import { useStyles } from '../style/style'
 import { useMediaQuery } from '../hooks/mediaQuery'
 
-import Hero from '../static/hero.png';
-
 import SocialMedia from '../components/socialMedia/socialMedia'
 import KwcCarousel from './portfolio/KwcCarousel'
 
