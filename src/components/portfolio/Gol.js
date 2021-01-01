@@ -1,7 +1,7 @@
 import React from 'react'
 import { useStyles } from '../../style/style'
 
-export default function Kwcsd() {
+export default function Gol() {
     const classes = useStyles()
 
     return (

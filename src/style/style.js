@@ -1,11 +1,23 @@
 import { makeStyles } from '@material-ui/styles'
 import { colors } from './colors'
+import bg from '../static/bg.jpg'
+
+const theme = {
+    text: colors.darkColor,
+    bg: colors.secondaryColor,
+    dark: colors.darkColor,
+}
 
 export const useStyles = makeStyles(() => ({
     app:{
         fontFamily: 'Arial, Helvetica, sans-serif',
-        backgroundColor: colors.darkColor,
-        height: '120vh',
+        // backgroundImage: `url(${bg})`,
+        // backgroundPosition: 'center',
+        // backgroundRepeat: 'no-repeat',
+        // backgroundSize: 'cover',
+        backgroundColor: theme.bg,
+        height: '100%',
+        minHeight: '100vh'
     },
     root: {
         display: 'flex',
@@ -22,7 +34,8 @@ export const useStyles = makeStyles(() => ({
         borderRadius: '10px',
         margin: '20px auto',
         '& @media (max-width 1024px)':{ display: 'none'}
-    } ,
+    },
+
     header:{
         color: colors.secondaryColo,
         display: 'flex',
@@ -36,7 +49,7 @@ export const useStyles = makeStyles(() => ({
         display: 'flex',
         flexDirection:'column',
         justifyContent: 'center',
-        color: colors.secondaryColor,
+        color: theme.text,
         fontSize: '1rem',
         '& h1':{
             fontSize: '4rem',
@@ -120,8 +133,8 @@ export const useStyles = makeStyles(() => ({
 
     // decorations
     horizLine:{
-        margin: '5vh auto 2vh auto',
-        border: '1px solid '+ colors.secondaryColor,
+        margin: '1vh auto 4vh auto',
+        border: '1px dotted '+ theme.dark,
         borderRadius: '90px',
         maxWidth: '1024px',
         width: '100%'
@@ -153,7 +166,7 @@ export const useStyles = makeStyles(() => ({
         fontSize: "1.15rem",
         margin: " .5rem 0",
         padding: "0 0 0 .5rem",
-        '& li':{
+        '& li, ol, ul, i':{
             padding: "0 0 .5rem 1rem",
         }
     },
@@ -188,13 +201,19 @@ export const useStyles = makeStyles(() => ({
         flexWrap: 'none',
         flexDirection: 'row',
         justifyContent: 'center',
-        borderRadius: '10px',
+
         backgroundColor: colors.primaryColor,
         height: '3.5rem',
         margin: '1rem 0 2rem',
         position: 'relative',
         zIndex:' 500',
-        width: '100 %',
+        width: '100%',
+        boxShadow: 'rgba(0, 0, 0, 0.35) 0px 10px 5px',
+
+    },
+    navToolbar:{
+        display:'flex'
+
     },
 
     // contact us

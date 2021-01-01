@@ -19,8 +19,8 @@ export default function Nav() {
   return (
   <div className={classes.spacedDiv}>
     <div className={classes.navBar} style={styles.container(isRow)}>
-      <Toolbar style={styles.container(isRow)}>
-        <a href='/'> <img style={logoStyle.container(isSmall)} src={Logo} alt='keller williams commercial' /></a>
+      <Toolbar className={classes.navToolbar} style={styles.container(isRow)}>
+        {/* <a href='/'> <img style={logoStyle.container(isSmall)} src={Logo} alt='keller williams commercial' /></a> */}
         <Home />
         <Portfolio />
         <About />

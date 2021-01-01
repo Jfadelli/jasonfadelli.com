@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <div className={classes.root}>
       <div className={classes.contentWrapper}>
-        <img style={styles.container(isHidden)} className={classes.hero} src={Hero} alt='banner horizon'/>
+        {/* <img style={styles.container(isHidden)} className={classes.hero} src={Hero} alt='banner horizon'/> */}
         <div className={classes.header}>
           <h1>J_son F_delli</h1>
           <h2>Professional Web Developer</h2>
@@ -25,7 +25,7 @@ export default function Home() {
             <SocialMedia/>
           </section>
           
-          <hr className={classes.horizLine} />
+          <hr />
           
           <h2>Recent Projects</h2>
           
