@@ -49,7 +49,7 @@ export default function About() {
           aria-haspopup="true"
           onClick={handleToggle}
           className={classes.navButton}
-        >About</Button>
+        >_bout</Button>
 
         <Popper className={classes.popper} open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
           {({ TransitionProps, placement }) => (
@@ -60,9 +60,9 @@ export default function About() {
               <Paper>
                 <ClickAwayListener onClickAway={handleClose}>
                   <MenuList className={classes.menuList} autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
-                    <Link className={classes.link} to = '/about/personal-life'><MenuItem onClick={handleClose}>Personal Life</MenuItem></Link>
-                    <Link className={classes.link} to = '/about/professional-life'><MenuItem onClick={handleClose}>Professional Life</MenuItem></Link>
-                    <Link className={classes.link} to = '/about/education'><MenuItem onClick={handleClose}>Education</MenuItem></Link>
+                    <Link className={classes.link} to = '/about/personal-life'><MenuItem className={classes.menuItem} onClick={handleClose}>Personal Life</MenuItem></Link>
+                    <Link className={classes.link} to = '/about/professional-life'><MenuItem className={classes.menuItem}  onClick={handleClose}>Professional Life</MenuItem></Link>
+                    <Link className={classes.link} to = '/about/education'><MenuItem className={classes.menuItem} onClick={handleClose}>Education</MenuItem></Link>
                   </MenuList>
                 </ClickAwayListener>
               </Paper>

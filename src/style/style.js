@@ -5,7 +5,7 @@ import { colors } from './colors'
 export const useStyles = makeStyles(() => ({
     app:{
         fontFamily: 'Tahoma, Arial, Helvetica, sans-serif',
-        backgroundColor: colors.alt,
+        backgroundColor: colors.bg,
         height: '100%',
         minHeight: '100vh'
     },
@@ -27,7 +27,7 @@ export const useStyles = makeStyles(() => ({
     },
 
     header:{
-        color: colors.alt,
+        color: colors.dark,
         display: 'flex',
         flexDirection:'column',
         justifyContent: 'center',
@@ -96,7 +96,7 @@ export const useStyles = makeStyles(() => ({
 
     link:{
         textDecoration: 'none',
-        color: colors.alt,
+        color: colors.accent,
         fontWeight: '500',
         fontSize: '1.5rem',
         textAlign:'center',
@@ -191,10 +191,10 @@ export const useStyles = makeStyles(() => ({
         flexWrap: 'none',
         flexDirection: 'row',
         justifyContent: 'center',
-
-        backgroundColor: colors.main,
-        height: '3.5rem',
-        margin: '1rem 0 2rem',
+        alignItems:'center',
+        backgroundColor: colors.bg,
+        height: '5vh',
+        marign: '0 0 1vh 0',
         position: 'relative',
         zIndex:' 500',
         width: '100%',
@@ -202,9 +202,15 @@ export const useStyles = makeStyles(() => ({
 
     },
     navToolbar:{
-        display:'flex'
+        display:'flex',
+        flexDirection:'row',
+        width: '50%',
+        height: '100%',
 
+        justifyContent: 'space-evenly',
     },
+     
+    // nav buttons and links are in navbar '../components/navbar/style.js'
 
     // contact us
     contactUs:{

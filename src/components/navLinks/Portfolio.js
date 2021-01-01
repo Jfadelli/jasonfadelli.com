@@ -53,7 +53,7 @@ export default function Portfolio() {
           onClick={handleToggle}
           className={classes.navButton}
         >
-          Portfolio
+          P_st Projects
         </Button>
         <Popper className={classes.popper} open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
           {({ TransitionProps, placement }) => (
@@ -64,9 +64,9 @@ export default function Portfolio() {
               <Paper >
                 <ClickAwayListener onClickAway={handleClose}>
                   <MenuList className={classes.menuList} autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
-                    <Link className={classes.link} to = '/portfolio/kwc-san-diego' ><MenuItem onClick={handleClose} >KWC San Diego</MenuItem></Link>
-                    <Link className={classes.link} to = '/portfolio/game-of-life'><MenuItem onClick={handleClose}>Game of Life</MenuItem></Link>
-                    <Link className={classes.link} to = '/portfolio/human-rights-first'><MenuItem onClick={handleClose}>Human Rights First</MenuItem></Link>
+                    <Link className={classes.link} to = '/portfolio/kwc-san-diego' ><MenuItem className={classes.menuItem} onClick={handleClose} >KWC San Diego</MenuItem></Link>
+                    <Link className={classes.link} to = '/portfolio/game-of-life'><MenuItem className={classes.menuItem} onClick={handleClose}>Game of Life</MenuItem></Link>
+                    <Link className={classes.link} to = '/portfolio/human-rights-first'><MenuItem className={classes.menuItem} onClick={handleClose}>Human Rights First</MenuItem></Link>
                   </MenuList>
                 </ClickAwayListener>
               </Paper>

@@ -10,32 +10,38 @@ export const useStyles = makeStyles((theme) => ({
     },
     navButton: {
       fontFamily: 'Tahoma, Arial, Helvetica, sans-serif',
-      display: 'flex',
       fontWeight:'550',
       whiteSpace: 'nowrap',
-      width: '150px',
-      fontSize: "1.5rem",
+      width: '100%',
+      fontSize: "1.25rem",
       color: colors.alt,
-      lineHeight: '1.5rem',
+      backgroundColor: colors.main,
+      border: '1px solid '+ colors.alt,
+      lineHeight: '1rem',
+      height:'2rem',
       margin: '0 20% 0 20%',
       position:'relative',
       zIndex: '6000',
       textTransform: 'none'
     },
     link:{
-        color: "black",
+        color: colors.dark,
         textDecoration:'none',
+
     },
     menuList:{
-      backgroundColor:'white',
       margin: '10px',
       position:'relative',
       zIndex: '8000',
+      fontSize:'100px'
+    },
+    menuItem:{
+      fontSize:'1rem',
+      fontWeight: '700',
+      borderRadius: '6px'
     },
     popper:{
       position: 'relative',
-      zIndex:'7000'
+      zIndex:'7000',
     }
 }));
-
-  

@@ -1,7 +1,7 @@
 import React from 'react';
 // import { Link } from 'react-router-dom';
 import { useStyles } from '../style/style'
-import { useMediaQuery } from '../hooks/mediaQuery'
+// import { useMediaQuery } from '../hooks/mediaQuery'
 
 import SocialMedia from '../components/socialMedia/socialMedia'
 import KwcCarousel from './portfolio/KwcCarousel'
@@ -9,7 +9,7 @@ import KwcCarousel from './portfolio/KwcCarousel'
 
 export default function Home() {
   const classes = useStyles();
-  const isHidden = useMediaQuery('(min-width: 1023px)');
+  // const isHidden = useMediaQuery('(min-width: 1023px)');
 
   return (
     <div className={classes.root}>
@@ -52,9 +52,9 @@ export default function Home() {
   );
 }
 
-const styles = {
-  container: isHidden => ({
-    display: isHidden ? 'flex' : 'none',
-    justifyContent: 'space-around'
-  })
-};
+// const styles = {
+//   container: isHidden => ({
+//     display: isHidden ? 'flex' : 'none',
+//     justifyContent: 'space-around'
+//   })
+// };

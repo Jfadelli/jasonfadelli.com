@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Toolbar from '@material-ui/core/Toolbar';
 
 import { useMediaQuery } from '../hooks/mediaQuery'
@@ -11,15 +11,24 @@ import Home from './navLinks/HomeLink.js'
 
 export default function Nav() {
   const isRow = useMediaQuery('(min-width: 769px)');
-  const isSmall = useMediaQuery('(min-width: 769px)');
   const classes = useStyles();
+  const [isHome, setIsHome ] = useState()
+
+  const url = window.location.href
+  const checkHome = (url => {
+
+    if (window.location.href === 'http://localhost:3000/'){
+      console.log('true - url is =>',document.URL )
+  }
+}, []);
+
 
   return (
   <div className={classes.spacedDiv}>
     <div className={classes.navBar} style={styles.container(isRow)}>
       <Toolbar className={classes.navToolbar} style={styles.container(isRow)}>
         {/* <a href='/'> <img style={logoStyle.container(isSmall)} src={Logo} alt='keller williams commercial' /></a> */}
-        <Home />
+        <Home style= {checkHome()} />
         <Portfolio />
         <About />
         <Contact />
@@ -39,11 +48,4 @@ const styles = {
   }),
 };
 
-const logoStyle = {
-  container: isSmall => ({
-    display: isSmall ? 'flex' : 'none',
-    height: isSmall ? '88px': '0',
-    width: isSmall ? '150px' : '0',
-    margin: isSmall ?  '0 100px 0 auto' : 'auto'
-  })
-}
+
