@@ -3,7 +3,7 @@ const colors = {
     secondaryColor: '#effbf9', //mint cream
     accentColor: '#eca72c', // marigold
     darkColor: '#1c1c1c', // eerie black
-    darkAccent: '#8D0BE4', // purple
+    darkAccent: '#F8FAF0', // ivory
 }
 
 export { 
