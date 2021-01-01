@@ -1,15 +1,15 @@
 import React from 'react'
 import { useStyles } from '../../style/style'
 
-export default function Gol() {
+export default function Kwcsd() {
     const classes = useStyles()
 
     return (
         <div className={classes.root}>
             <div className={classes.contentWrapper}>
                 <div className={classes.header}>
-                    <h1>Conway's Game of Life</h1>
-                    <h2>A fun JSX rendition of Conway's Game of Life</h2>
+                    <h1>KWC San Diego</h1>
+                    <h2>A Custom React App for a Real Estate Broker</h2>
                 </div>
 
                 <hr className={classes.horizLine} />
@@ -24,11 +24,10 @@ export default function Gol() {
                 <section className={classes.content}>
                     <p> Content </p><br/>
                     <p> Content </p>
-                </section>
+                    </section>
                 <hr className={classes.horizLine} />
-                <section className={classes.content}>
+
                 <h4>Disclaimer</h4>
-                </section>
             </div>
         </div>
     )

@@ -18,7 +18,7 @@ export const useStyles = makeStyles((theme) => ({
       lineHeight: '1.5rem',
       margin: '0 4% 0 4%',
       position:'relative',
-      zIndex: '150',
+      zIndex: '6000',
     },
     link:{
         color: "black",
@@ -28,11 +28,11 @@ export const useStyles = makeStyles((theme) => ({
       backgroundColor:'white',
       margin: '10px',
       position:'relative',
-      zIndex: '250',
+      zIndex: '8000',
     },
     popper:{
       position: 'relative',
-      zIndex:'200'
+      zIndex:'7000'
     }
 }));
 

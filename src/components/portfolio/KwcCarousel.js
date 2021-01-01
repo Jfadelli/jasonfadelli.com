@@ -12,7 +12,7 @@ import referrals from '../../static/slides/referrals.png'
 import services from '../../static/slides/services.png'
 import services2 from '../../static/slides/services-2.png'
 
-export default function Gol() {
+export default function KwcCarousel() {
     // const classes = useStyles()
 
     return (
@@ -63,21 +63,13 @@ export default function Gol() {
 
                                         </figure>
                                     </figure>
-                                    
                                 </figure>
-                    
-                            </figure>	
-                                
-                        </figure>	
-                            
-                    </figure>
-                        
+                            </figure>	   
+                        </figure>	    
+                    </figure>    
                 </figure>
-                
             </figure>
-            
-        </figure>
-        
+        </figure> 
     </div>
 
     )

@@ -5,6 +5,10 @@ import { useMediaQuery } from '../hooks/mediaQuery'
 
 import Hero from '../static/hero.png';
 
+import SocialMedia from '../components/socialMedia/socialMedia'
+import KwcCarousel from './portfolio/KwcCarousel'
+
+
 export default function Home() {
   const classes = useStyles();
   const isHidden = useMediaQuery('(min-width: 1023px)');
@@ -18,15 +22,16 @@ export default function Home() {
           <h2>Professional Web Developer</h2>
         </div> 
           <section className={classes.content}>
-            <p> SOCIAL LINKS HERE</p>
+            <SocialMedia/>
           </section>
           
           <hr className={classes.horizLine} />
           
-          <h3>Sub Heading</h3>
+          <h2>Recent Projects</h2>
           
           <section className={classes.content}>
-            <p>Content</p>
+            <h3>KWC San Diego</h3>
+            <KwcCarousel/>
           </section>
           
           <hr className={classes.horizLine} />

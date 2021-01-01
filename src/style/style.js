@@ -5,7 +5,7 @@ export const useStyles = makeStyles(() => ({
     app:{
         fontFamily: 'Arial, Helvetica, sans-serif',
         backgroundColor: colors.darkColor,
-        height: '100vh',
+        height: '120vh',
     },
     root: {
         display: 'flex',
@@ -41,7 +41,7 @@ export const useStyles = makeStyles(() => ({
         '& h1':{
             fontSize: '4rem',
             padding: '0',
-            margin: '5px 0 2vh 0',
+            margin: '5px 0 3vh 0',
             textAlign: 'center',
             width: 'auto'
         },
@@ -50,21 +50,23 @@ export const useStyles = makeStyles(() => ({
             fontSize: '2rem',
             justifyContent: 'center',
             padding: '0',
-            margin: '-2vh 0 1.5vh',
+            margin: '-1vh 0 1vh',
             textAlign: 'center',
-            width: 'auto'  
+            width: 'auto',
         },
         '& h3':{
             fontSize:'1.5rem',
             fontWeight:'400',
             textAlign: 'center',
-            margin: '1vh 0 2vh 0',
+            margin: '1vh 0 0vh 0',
             padding: '0'  
         },
         '&h4':{
             fontSize: '1 rem',
-            textDecoration: 'bold'
-        }
+            textDecoration: 'bold',
+            margin: '0'
+        },
+
     },
 
     content:{
@@ -77,7 +79,7 @@ export const useStyles = makeStyles(() => ({
         width:'100vw',
         maxWidth: '1024px',
         '& p':{ 
-            margin: 'auto .5rem'
+            margin: '1rem 0 .5rem'
         }
     },
 
@@ -119,7 +121,8 @@ export const useStyles = makeStyles(() => ({
     // decorations
     horizLine:{
         margin: '5vh auto 2vh auto',
-        border: '1px solid #666666',
+        border: '1px solid '+ colors.secondaryColor,
+        borderRadius: '90px',
         maxWidth: '1024px',
         width: '100%'
     },
@@ -190,7 +193,7 @@ export const useStyles = makeStyles(() => ({
         height: '3.5rem',
         margin: '1rem 0 2rem',
         position: 'relative',
-        zIndex:' 100',
+        zIndex:' 500',
         width: '100 %',
     },
 
