@@ -1,0 +1,112 @@
+.game-body {
+  background-image: url('./static/double-bubble-dark.png');
+}
+  
+.box {
+  display: inline-block;       
+  border: 1px solid black;
+  width: 15px;
+  height: 15px;
+  margin-left: -1px;
+  margin-bottom: -1px;
+  }
+
+.off {
+  background-color: rgb(37, 4, 59);
+}
+
+.on {
+  background-color: rgb(240, 199, 17)
+}
+  
+.box:hover { 
+  background: #00CCFF;
+}
+
+.center {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.grid {
+  width: 150px;
+  line-height: 0;
+  margin: auto;
+  box-shadow: 0px 0px 20px white;
+  margin-top: 20px;
+}
+  
+/* h1, h2, h3, h4 {
+  color: white;
+  margin: auto;
+  text-align: center;
+  width: 50%;
+  margin-top: 10px;
+} */
+
+h4 {
+  margin-top: 0px;
+}
+
+.btn-toolbar{
+display: flex;
+justify-content: center;
+padding: 10px
+}
+
+.btn{
+  display: flex;
+  margin: 0 10px
+}
+
+#secret {
+  display: flex;
+  color: gray;
+  margin: auto;
+  text-align: center;
+  margin-top: 10px;
+  border: none;
+  background-color: rgba(255,255,255,0);
+}
+
+/* .about{
+  display: flex;
+  flex-direction: column;
+  color: white;
+  padding: 5px;
+} */
+
+.about h1, h2, h3{
+  padding: 15px
+}
+
+.about .list{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  margin-left: 10%;
+  color: #1c1c1c;
+  font-weight: 600;
+}
+
+.about p{
+  margin: 0 10%;
+}
+
+.bg-list ol{
+  font-size: 20px;
+}
+
+.bg-list ul{
+  margin-left: 25px;
+}
+
+.link{
+  color: white;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+}

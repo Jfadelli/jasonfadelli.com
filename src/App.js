@@ -7,11 +7,14 @@ import Nav from './components/Nav'
 import Home from './components/Home'
 
   // Portfolio
-import Kwcsd from './components/portfolio/Kwcsd'
-import Gol from './components/portfolio/Gol'
+import Kwcsd from './components/portfolio/kwcsd/Kwcsd'
+import Gol from './components/portfolio/gol/Gol'
 
   // Contact
 import Contact from './components/contact/ContactForm'
+
+  // About
+import Kiki from './components/about/Kiki'
 
 
 
@@ -29,6 +32,9 @@ function App() {
 
       {/* contact */}
       <Route path='/contact/contact-form' component={Contact}/>
+
+      {/* about */}
+      <Route path='/about/Kikis-Coding' component={Kiki}/>
   
     </div>
   );

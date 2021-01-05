@@ -63,6 +63,8 @@ export default function About() {
                     <Link className={classes.link} to = '/about/personal-life'><MenuItem className={classes.menuItem} onClick={handleClose}>Personal Life</MenuItem></Link>
                     <Link className={classes.link} to = '/about/professional-life'><MenuItem className={classes.menuItem}  onClick={handleClose}>Professional Life</MenuItem></Link>
                     <Link className={classes.link} to = '/about/education'><MenuItem className={classes.menuItem} onClick={handleClose}>Education</MenuItem></Link>
+                    <Link className={classes.link} to = '/about/Kikis-Coding'><MenuItem className={classes.menuItem} onClick={handleClose}>kikis-coding</MenuItem></Link>
+
                   </MenuList>
                 </ClickAwayListener>
               </Paper>

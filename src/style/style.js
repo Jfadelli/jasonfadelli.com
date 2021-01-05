@@ -46,14 +46,14 @@ export const useStyles = makeStyles(() => ({
             padding: '0',
             margin: '5px 0 3vh 0',
             textAlign: 'center',
-            width: 'auto'
+            width: 'auto',
         },
         '& h2':{
             display:'flex',
             fontSize: '2rem',
             justifyContent: 'center',
             padding: '0',
-            margin: '-1vh 0 1vh',
+            margin: '0 0 1vh',
             textAlign: 'center',
             width: 'auto',
         },
@@ -69,6 +69,9 @@ export const useStyles = makeStyles(() => ({
             textDecoration: 'bold',
             margin: '0'
         },
+        '& p':{
+            // margin: '1rem 0 .5rem'
+        }
 
     },
 
@@ -83,7 +86,8 @@ export const useStyles = makeStyles(() => ({
         maxWidth: '1024px',
         '& p':{ 
             margin: '1rem 0 .5rem'
-        }
+        },
+        // backgroundColor:'lightgreen'
     },
 
     gallery:{
@@ -95,6 +99,9 @@ export const useStyles = makeStyles(() => ({
     },
 
     link:{
+        alignSelf:'center',
+        justifyContent:'center',
+        display: 'flex',
         textDecoration: 'none',
         color: colors.accent,
         fontWeight: '500',
@@ -137,8 +144,8 @@ export const useStyles = makeStyles(() => ({
         justifyContent: "space-evenly",
         alignSelf:'center',
         maxWidth: '1024px',
-        minWidth: '1023px',
         width: '100%',
+        // backgroundColor:'lightblue'
     },
     flexCol: { 
         display: "flex",
@@ -146,6 +153,16 @@ export const useStyles = makeStyles(() => ({
         justifyContent: "center",
         textAlign: "left",
         margin: "2vh 5%",
+        // backgroundColor: 'pink'
+    },
+    flexRowTight:{
+        display: "flex",
+        flexDirection:'row',
+        justifyContent: "center",
+        alignSelf:'center',
+        maxWidth: '1024px',
+        width: '100%',
+        // backgroundColor:'lightblue', 
     },
 
     // font styles
@@ -158,7 +175,16 @@ export const useStyles = makeStyles(() => ({
         padding: "0 0 0 .5rem",
         '& li, ol, ul, i':{
             padding: "0 0 .5rem 1rem",
-        }
+        }, 
+        '& h2':{ 
+            whiteSpace: 'nowrap',
+        },
+    },
+    specUL:{
+        marginLeft: '25px',
+    },       
+    specOL:{
+        marginLeft: '20px',
     },
     heading:{
         display: 'flex',

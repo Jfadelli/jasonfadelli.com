@@ -1,0 +1,117 @@
+/* This is the CSS file that is called by the HTML files. The CSS file is able to change the attributes of the different objects created by the HTML file. These attributes include color, size, and placement on the page. As you can see, the object “body”, which is a section in the HTML file, can be modified using CSS properties. 
+
+Do not remove or change any of the existing items in the CSS file! If you remove something important, it could mess up the pixel art.
+
+These values control the visual attributes of the body of the HTML. In this case, the body of the HTML is the pixel art. These attributes include the background, the height, the type of display, as well the positioning of objects through the “justify-content” and “align-items” modifiers. */
+
+.body {
+  background: #333;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* These values control the appearance of all objects with “div” tags. The width and height are set to 30 pixels. “Float” controls the positioning of the objects, and “box-shadow” controls the outline of the objects. */
+section {
+  width: 30px;
+  height: 30px;
+  float: left;
+  box-shadow: 0px 0px 1px #fff;
+}
+
+/* These values set the size of the canvas by making its width and height both 240 pixels. */
+.canvas {
+  width: 240px;
+  height: 240px;
+}
+
+/* In order to add more colors that are not already present in this file, type the name of the color. Then add a period and curly brackets like this:
+
+.orange {
+}
+
+Then, within the curly brackets, type in “background-color: ” and type the color you want to add followed by a semicolon.
+
+.orange { 
+  background-color: orange; 
+}
+
+To add a new color, go to this link, https://www.w3schools.com/colors/colors_picker.asp, find the color you want, and copy its hex code. Hex codes look like this: #99ccff, #669900, etc. Then paste this code right after the colon.
+
+.orange { 
+  background-color: #ff9933;
+}
+
+Make sure not to forget the semicolon following the color. Use the colors below as a reference. */ 
+.blue {
+  background-color: blue;
+}
+
+.dark-blue {
+  background-color: #000033;
+}
+
+.black {
+  background-color: black;
+}
+
+.white {
+  background-color: white;
+}
+
+.tan {
+  background-color: tan;
+}
+
+.green {
+  background-color: green;
+}
+
+.red {
+  background-color: red;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.maroon {
+  background-color: maroon;
+}
+
+.brown {
+  background-color: brown;
+}
+
+.salmon {
+  background-color: #ff748c;
+}
+
+.light-blue {
+  background-color: dodgerblue;
+}
+
+.wheat {
+  background-color: wheat;
+}
+
+.pink {
+  background-color: pink;
+}
+
+.orange {
+  background-color: orange;
+}
+
+.gray {
+  background-color: gray;
+}
+
+.magenta {
+  background-color: magenta;
+}
+
+.light-green {
+  background-color: limegreen;
+}
