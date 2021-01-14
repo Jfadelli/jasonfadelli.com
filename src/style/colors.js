@@ -11,7 +11,7 @@ const colors = {
     main: '#004FFF ', // Blue RYB
     alt: '#EBF1FF', // Magnolia'
     light: '#F8FAF0', // ivory
-    accent: '#FF1053', // Red Crayola
+    accent: '#709DFF', // Red Crayola
     bg: '#F8FAF0', // ivory
 }
 // '#C1CAD6' // Beau Blue

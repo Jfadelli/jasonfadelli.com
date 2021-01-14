@@ -4,10 +4,12 @@ import { colors } from './colors'
 
 export const useStyles = makeStyles(() => ({
     app:{
+        position: 'absolute',
         fontFamily: 'Tahoma, Arial, Helvetica, sans-serif',
         backgroundColor: colors.bg,
-        height: '100%',
-        minHeight: '100vh'
+        minHeight: '100%',
+        left: '0',
+        right:'0',
     },
     root: {
         display: 'flex',
@@ -103,16 +105,16 @@ export const useStyles = makeStyles(() => ({
         justifyContent:'center',
         display: 'flex',
         textDecoration: 'none',
-        color: colors.accent,
-        fontWeight: '500',
+        color: colors.main,
+        fontWeight: '600',
         fontSize: '1.5rem',
         textAlign:'center',
-        borderBottom: 'dotted black 1px',
+        borderBottom: `dotted ${colors.main} 1px`,
         lineHeight: '3rem',
         width: '50%',
         '&:hover':{
-            color: colors.main,
-            borderBottom: 'dotted rgb(230 70 1) 1px'
+            color: colors.accent,
+            borderBottom: `dotted ${colors.accent} 1px`
         }
     },
 
@@ -304,4 +306,18 @@ export const useStyles = makeStyles(() => ({
         boxShadow: '0 10px 10px 2px rgba(0,0,0,0.2)',
         transition: '0.3s',
     },
+    fadeEnter:{
+        opacity: '0'
+     },
+     fadeExit:{
+        opacity: '1',
+     },
+     fadeEnterActive:{
+        opacity:'1',
+        transition: 'opacity 500ms',
+     },
+     fadeExitActive:{
+        opacity: '0',
+        transition: 'opacity 500ms',
+     },
 }));

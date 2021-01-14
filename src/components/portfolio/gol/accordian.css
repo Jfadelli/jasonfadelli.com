@@ -12,7 +12,7 @@
     position: absolute;
 	top: 0;
 	left: 35px; /* width of visible piece */
-	width: 700px;
+	width: px;
     box-shadow: 0 0 0 1px rgba(255,255,255,0.6);
 	-webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;

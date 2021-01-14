@@ -7,7 +7,7 @@ import Popper from '@material-ui/core/Popper';
 import MenuItem from '@material-ui/core/MenuItem';
 import MenuList from '@material-ui/core/MenuList';
 import { useStyles } from './style';
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 
 export default function ServicesOffered() {
@@ -62,7 +62,7 @@ export default function ServicesOffered() {
               <Paper>
                 <ClickAwayListener onClickAway={handleClose}>
                   <MenuList className={classes.menuList} autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
-                    <Link className={classes.link} to ='/contact/contact-form' ><MenuItem className={classes.menuItem} onClick={handleClose} >Contact J_son</MenuItem></Link>
+                    <NavLink className={classes.link} to ='/contact/contact-form' ><MenuItem className={classes.menuItem} onClick={handleClose} >Contact J_son</MenuItem></NavLink>
                   </MenuList>
                 </ClickAwayListener>
               </Paper>

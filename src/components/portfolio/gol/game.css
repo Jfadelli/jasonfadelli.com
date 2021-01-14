@@ -12,11 +12,11 @@
   }
 
 .off {
-  background-color: rgb(37, 4, 59);
+  background-color: rgba(83, 26, 240, 0.152);
 }
 
 .on {
-  background-color: rgb(240, 199, 17)
+  background-color: rgb(17, 62, 240)
 }
   
 .box:hover { 

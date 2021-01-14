@@ -7,7 +7,7 @@ import Popper from '@material-ui/core/Popper';
 import MenuItem from '@material-ui/core/MenuItem';
 import MenuList from '@material-ui/core/MenuList';
 import { useStyles } from './style';
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 export default function About() {
   const classes = useStyles();
@@ -60,10 +60,13 @@ export default function About() {
               <Paper>
                 <ClickAwayListener onClickAway={handleClose}>
                   <MenuList className={classes.menuList} autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
-                    <Link className={classes.link} to = '/about/personal-life'><MenuItem className={classes.menuItem} onClick={handleClose}>Personal Life</MenuItem></Link>
-                    <Link className={classes.link} to = '/about/professional-life'><MenuItem className={classes.menuItem}  onClick={handleClose}>Professional Life</MenuItem></Link>
-                    <Link className={classes.link} to = '/about/education'><MenuItem className={classes.menuItem} onClick={handleClose}>Education</MenuItem></Link>
-                    <Link className={classes.link} to = '/about/Kikis-Coding'><MenuItem className={classes.menuItem} onClick={handleClose}>kikis-coding</MenuItem></Link>
+                    <NavLink className={classes.link} to = '/about/personal-life'><MenuItem className={classes.menuItem} onClick={handleClose}>Personal Life</MenuItem></NavLink>
+
+                    {/* <NavLink className={classes.link} to = '/about/professional-life'><MenuItem className={classes.menuItem}  onClick={handleClose}>Professional Life</MenuItem></NavLink> */}
+
+                    {/* <NavLink className={classes.link} to = '/about/education'><MenuItem className={classes.menuItem} onClick={handleClose}>Education</MenuItem></NavLink> */}
+
+                    <NavLink className={classes.link} to = '/about/Kikis-Coding'><MenuItem className={classes.menuItem} onClick={handleClose}>kikis-coding</MenuItem></NavLink>
 
                   </MenuList>
                 </ClickAwayListener>

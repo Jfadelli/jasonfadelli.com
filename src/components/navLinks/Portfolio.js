@@ -7,7 +7,7 @@ import Popper from '@material-ui/core/Popper';
 import MenuItem from '@material-ui/core/MenuItem';
 import MenuList from '@material-ui/core/MenuList';
 import { useStyles } from './style';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export default function Portfolio() {
   const classes = useStyles();
@@ -64,9 +64,9 @@ export default function Portfolio() {
               <Paper >
                 <ClickAwayListener onClickAway={handleClose}>
                   <MenuList className={classes.menuList} autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
-                    <Link className={classes.link} to = '/portfolio/kwc-san-diego' ><MenuItem className={classes.menuItem} onClick={handleClose} >KWC San Diego</MenuItem></Link>
-                    <Link className={classes.link} to = '/portfolio/game-of-life'><MenuItem className={classes.menuItem} onClick={handleClose}>Game of Life</MenuItem></Link>
-                    <Link className={classes.link} to = '/portfolio/human-rights-first'><MenuItem className={classes.menuItem} onClick={handleClose}>Human Rights First</MenuItem></Link>
+                    <NavLink className={classes.link} to = '/portfolio/kwc-san-diego' ><MenuItem className={classes.menuItem} onClick={handleClose} >KWC San Diego</MenuItem></NavLink>
+                    <NavLink className={classes.link} to = '/portfolio/game-of-life'><MenuItem className={classes.menuItem} onClick={handleClose}>Game of Life</MenuItem></NavLink>
+                    {/* <NavLink className={classes.link} to = '/portfolio/human-rights-first'><MenuItem className={classes.menuItem} onClick={handleClose}>Human Rights First</MenuItem></NavLink> */}
                   </MenuList>
                 </ClickAwayListener>
               </Paper>

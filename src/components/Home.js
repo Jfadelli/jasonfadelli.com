@@ -6,6 +6,7 @@ import SocialMedia from '../components/socialMedia/socialMedia'
 import KwcCarousel from './portfolio/kwcsd/KwcCarousel'
 import GolCarousel from './portfolio/gol/GolCarousel'
 
+
 export default function Home() {
   const classes = useStyles();
   // const isHidden = useMediaQuery('(min-width: 1023px)');
@@ -23,11 +24,8 @@ export default function Home() {
         <hr />
 
         <h2>Recent Projects</h2>
+        <Link className={classes.link} to='/portfolio/kwc-san-diego'><h3>KWC San Diego</h3></Link>
 
-        <section className={classes.content}>
-          <Link className={classes.link} to='/portfolio/kwc-san-diego'><h3>KWC San Diego</h3></Link>
-
-        </section>
         <br/>
         <KwcCarousel />
 
