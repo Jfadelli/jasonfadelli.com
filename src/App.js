@@ -14,6 +14,7 @@ import Home from './components/Home'
 // Portfolio
 import Kwcsd from './components/portfolio/kwcsd/Kwcsd'
 import Gol from './components/portfolio/gol/Gol'
+import Blackjack from './components/portfolio/blackjack/Blackjack'
 
 // Contact
 import Contact from './components/contact/ContactForm'
@@ -36,13 +37,14 @@ function App() {
           <CSSTransition
             key={location.key}
             timeout={500}
-            classNames=' fade'>
+            classNames='fade'>
             <Switch location={location}>
               <Route exact path='/' component={Home} />
 
               {/* about */}
               <Route path='/portfolio/kwc-san-diego' component={Kwcsd} />
               <Route path='/portfolio/game-of-life' component={Gol} />
+              <Route path='/portfolio/blackjack' component={Blackjack} />
 
               {/* contact */}
               <Route path='/contact/contact-form' component={Contact} />

@@ -12,7 +12,7 @@ const colors = {
     alt: '#EBF1FF', // Magnolia'
     light: '#F8FAF0', // ivory
     accent: '#709DFF', // Red Crayola
-    bg: '#F8FAF0', // ivory
+    bg: '#FFFFFF', // ivory
 }
 // '#C1CAD6' // Beau Blue
 export { 

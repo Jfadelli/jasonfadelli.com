@@ -320,4 +320,78 @@ export const useStyles = makeStyles(() => ({
         opacity: '0',
         transition: 'opacity 500ms',
      },
+
+     // black jack styles
+     bjCard:{
+        height: '176px',
+        width: '126px',
+        margin: '5px',
+        display: 'flex',
+        borderRadius: '6px',
+        flexDirection:'column',
+        justifyContent:'space-around',
+        backgroundColor: 'lightblue',
+        fontSize:'2em'
+     },
+     rankTL:{
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent:'flex-start'
+
+     },
+     rankBR:{
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent:'flex-end'
+     },
+
+    suite:{
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent:'center'
+    },
+
+     bjTable:{
+        display: 'flex',
+        justifyContent:'space-between',
+        alignItems: 'center',
+
+        flexDirection:'column',
+        height: '800px',
+        width: '1024px',
+        backgroundColor: 'green',
+
+     },
+     dealerArea:{
+        height: '200px',
+        width: '600px',
+        display: 'flex',
+        flexDirection:'row',
+        justifyContent:'space-evenly',
+        border: '1px solid yellow',
+        borderRadius: '0 0 300px 300px'
+
+     },
+     dealer:{
+         display: 'flex',
+     },
+     playerArea:{
+        height: '200px',
+        width: '600px',
+        display: 'flex',
+        flexDirection:'row',
+        justifyContent:'space-evenly',
+     },
+     player:{
+         display: 'flex',
+     },
+     shuffle:{ 
+        backgroundColor: 'white ', 
+        fontSize:'2em',
+        border: '1px solid black',
+        borderRadius: '6px',
+        height:'100px',
+        width:'100px',
+        margin: '0 10px '
+    }
 }));
