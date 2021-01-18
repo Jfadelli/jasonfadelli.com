@@ -1,0 +1,39 @@
+.suite {
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    align-content: center;
+    align-self: center
+}
+
+.heart{
+    display: none;
+}
+
+.diamond{
+    display: none;
+}
+
+.spade{
+    display: none;
+}
+
+.club{
+    display: none;
+}
+
+.player-heart{
+    display: none;
+}
+
+.player-diamond{
+    display: none;
+}
+
+.player-spade{
+    display: none;
+}
+
+.player-club{
+    display: none;
+}

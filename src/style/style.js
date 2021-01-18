@@ -336,13 +336,15 @@ export const useStyles = makeStyles(() => ({
      rankTL:{
         display: 'flex',
         flexDirection: 'row',
-        justifyContent:'flex-start'
+        justifyContent:'flex-start',
+        margin: '0 5px'
 
      },
      rankBR:{
         display: 'flex',
         flexDirection: 'row',
-        justifyContent:'flex-end'
+        justifyContent:'flex-end',
+        margin:'0 5px'
      },
 
     suite:{
@@ -352,6 +354,7 @@ export const useStyles = makeStyles(() => ({
     },
 
      bjTable:{
+        margin: '1em 0',
         display: 'flex',
         justifyContent:'space-between',
         alignItems: 'center',
@@ -367,8 +370,9 @@ export const useStyles = makeStyles(() => ({
         width: '600px',
         display: 'flex',
         flexDirection:'row',
-        justifyContent:'space-evenly',
+        justifyContent:'center',
         border: '1px solid yellow',
+        borderTop: '0px',
         borderRadius: '0 0 300px 300px'
 
      },
@@ -393,5 +397,16 @@ export const useStyles = makeStyles(() => ({
         height:'100px',
         width:'100px',
         margin: '0 10px '
+    },
+    pScore:{
+        display: 'flex',
+        border: '1px solid yellow',
+        borderRadius:'6px',
+        height: '30px',
+        width:'30px',
+        alignItems:'center',
+        justifyContent: 'center',
+        backgroundColor:'lightyellow',
+        color: 'red'
     }
 }));
