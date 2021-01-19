@@ -278,7 +278,7 @@ export default function Table() {
         randomIndex = Math.floor(Math.random() * Math.floor(deck.length))
         playerHand.push(deck[randomIndex])
         deck = deck.filter(item => item !== deck[randomIndex])
-        
+
         randomIndex = Math.floor(Math.random() * Math.floor(deck.length))
         dealerHand.push(deck[randomIndex])
         deck = deck.filter(item => item !== deck[randomIndex])
@@ -356,7 +356,7 @@ export default function Table() {
             else if (hand[i].rank === '8') { playerTempScore += 8 }
             else if (hand[i].rank === '9') { playerTempScore += 9 }
             else if (hand[i].rank === '10' || 'j' || 'q' || 'k') { playerTempScore += 10; }
-            else if (hand[i].rank === 'a') { playerTempScore += 11;}
+            else if (hand[i].rank === 'a') { playerTempScore += 11; }
             setPlayerScore(playerTempScore)
         }
 
@@ -374,129 +374,154 @@ export default function Table() {
             setDealerScore(dealerTempScore)
         }
     }
+    document.addEventListener("DOMContentLoaded", function (event) {
+        circularText("BLACKJACK", 500, 0);
+
+        function circularText(txt, radius, classIndex) {
+
+            txt = txt.split("")
+            classIndex = document.getElementsByClassName("circTxt")[classIndex];
+
+            var deg = 60 / txt.length,
+                origin = -27;
+
+            txt.forEach((ea) => {
+                ea = `<p style='height:${radius}px;position:absolute;transform:rotate(${origin}deg);transform-origin:0 100%'>${ea}</p>`;
+                classIndex.innerHTML += ea;
+                origin += deg;
+            });
+        }
+    });
+
 
     return (
-
-        <div className={classes.bjTable}>
-            <div className={classes.dealerArea}>
-
-                <div className={classes.bjCard}>
-                    <div className={classes.rankTL}>
-                        {dealerHandState[0] ? dealerHandState[0].rank : '?'}
-                    </div>
-
-                    <div className={classes.suite}>
-                        <div class='suite'>
-                            {dealerHandState[0] ? showHeart() : hideHeart()}
-                            {dealerHandState[0] ? showDiamond() : hideDiamond()}
-                            {dealerHandState[0] ? showSpade() : hideSpade()}
-                            {dealerHandState[0] ? showClub() : hideClub()}
-
-                            <img class='club' alt='club' src={club} />
-                            <img class='spade' alt='spade' src={spade} />
-                            <img class='heart' alt='heart' src={heart} />
-                            <img class='diamond' alt='diamond' src={diamond} />
-                        </div>
-                    </div>
-
-                    <div className={classes.rankBR}>
-                        {dealerHandState[0] ? dealerHandState[0].rank : '?'}
-                    </div>
-                </div>
-
-                <div className={classes.bjCard}>
-                    <div className={classes.rankTL}>
-                        {dealerHandState[1] ? dealerHandState[1].rank : '?'}
-                    </div>
-
-                    <div className={classes.suite}>
-                        <div class='suite'>
-                            {dealerHandState[1] ? showHeart() : hideHeart()}
-                            {dealerHandState[1] ? showDiamond() : hideDiamond()}
-                            {dealerHandState[1] ? showSpade() : hideSpade()}
-                            {dealerHandState[1] ? showClub() : hideClub()}
-
-                            <img class='club' alt='club' src={club} />
-                            <img class='spade' alt='spade' src={spade} />
-                            <img class='heart' alt='heart' src={heart} />
-                            <img class='diamond' alt='diamond' src={diamond} />
-                        </div>
-                    </div>
-
-                    <div className={classes.rankBR}>
-                        {dealerHandState[1] ? dealerHandState[1].rank : '?'}
-                    </div>
+        <div>
+            <div className="" id='container'>
+                <div class="circTxt" id="test">
                 </div>
             </div>
-            <div style={{ margin: '0 0 -10px' }}>Dealer Has</div>
-            <div className={classes.pScore}>{dealerScore}</div>
+            <div className={classes.bjTable}>
 
-            <div className={classes.controls}>
-                <button className={classes.shuffle} onClick={deal}> Deal Cards </button>
-                <button className={classes.shuffle} onClick={viewHands}>View Hands</button>
-                {/* <button className={classes.shuffle} onClick={suiteHandler}>Suite</button> */}
-                {/* <button className={classes.shuffle} onClick={viewDealerHand}>View Dealer</button> */}
-            </div>
-
-            <div className={classes.controls}>
-                <button className={classes.shuffle} onClick={dealerHit}>Dealer Hit</button>
-                <button className={classes.shuffle} onClick={playerHit}>Player Hit</button>
-                <button className={classes.shuffle} onClick={checkPoints}>Check Points</button>
-            </div>
-            <div style={{ margin: '0 0 -10px' }}>Player Has</div>
-            <div className={classes.pScore}>{playerScore}</div>
-            <div className={classes.playerArea}>
-
-                <div className={classes.player}>
-
+                <div className={classes.dealerArea}>
 
                     <div className={classes.bjCard}>
                         <div className={classes.rankTL}>
-                            {hand[0] ? hand[0].rank : '?'}
+                            {dealerHandState[0] ? dealerHandState[0].rank : '?'}
                         </div>
+
                         <div className={classes.suite}>
                             <div class='suite'>
-                                {hand[0] ? showHeartPlayer() : hideHeartPlayer()}
-                                {hand[0] ? showDiamondPlayer() : hideDiamondPlayer()}
-                                {hand[0] ? showSpadePlayer() : hideSpadePlayer()}
-                                {hand[0] ? showClubPlayer() : hideClubPlayer()}
+                                {dealerHandState[0] ? showHeart() : hideHeart()}
+                                {dealerHandState[0] ? showDiamond() : hideDiamond()}
+                                {dealerHandState[0] ? showSpade() : hideSpade()}
+                                {dealerHandState[0] ? showClub() : hideClub()}
 
-                                <img class='player-club' alt='club' src={club} />
-                                <img class='player-spade' alt='spade' src={spade} />
-                                <img class='player-heart' alt='heart' src={heart} />
-                                <img class='player-diamond' alt='diamond' src={diamond} />
+                                <img class='club' alt='club' src={club} />
+                                <img class='spade' alt='spade' src={spade} />
+                                <img class='heart' alt='heart' src={heart} />
+                                <img class='diamond' alt='diamond' src={diamond} />
                             </div>
                         </div>
+
                         <div className={classes.rankBR}>
-                            {hand[0] ? hand[0].rank : '?'}
+                            {dealerHandState[0] ? dealerHandState[0].rank : '?'}
                         </div>
                     </div>
 
-                    <div className={classes.bjCard} >
+                    <div className={classes.bjCard}>
                         <div className={classes.rankTL}>
-                            {hand[1] ? hand[1].rank : '?'}
+                            {dealerHandState[1] ? dealerHandState[1].rank : '?'}
                         </div>
+
                         <div className={classes.suite}>
                             <div class='suite'>
-                                {dealerHandState[1] ? showHeartPlayer() : hideHeartPlayer()}
-                                {dealerHandState[1] ? showDiamondPlayer() : hideDiamondPlayer()}
-                                {dealerHandState[1] ? showSpadePlayer() : hideSpadePlayer()}
-                                {dealerHandState[1] ? showClubPlayer() : hideClubPlayer()}
+                                {dealerHandState[1] ? showHeart() : hideHeart()}
+                                {dealerHandState[1] ? showDiamond() : hideDiamond()}
+                                {dealerHandState[1] ? showSpade() : hideSpade()}
+                                {dealerHandState[1] ? showClub() : hideClub()}
 
-                                <img class='player-club' alt='club' src={club} />
-                                <img class='player-spade' alt='spade' src={spade} />
-                                <img class='player-heart' alt='heart' src={heart} />
-                                <img class='player-diamond' alt='diamond' src={diamond} />
+                                <img class='club' alt='club' src={club} />
+                                <img class='spade' alt='spade' src={spade} />
+                                <img class='heart' alt='heart' src={heart} />
+                                <img class='diamond' alt='diamond' src={diamond} />
                             </div>
                         </div>
+
                         <div className={classes.rankBR}>
-                            {hand[1] ? hand[1].rank : '?'}
+                            {dealerHandState[1] ? dealerHandState[1].rank : '?'}
                         </div>
                     </div>
-                    {/* <Card /> */}
                 </div>
-            </div>
+                <div style={{ margin: '0 0 -10px' }}>Dealer Has</div>
+                <div className={classes.pScore}>{dealerScore}</div>
 
-        </div>
+                <div className={classes.controls}>
+                    <button className={classes.shuffle} onClick={deal}> Deal Cards </button>
+                    <button className={classes.shuffle} onClick={viewHands}>View Hands</button>
+                    {/* <button className={classes.shuffle} onClick={suiteHandler}>Suite</button> */}
+                    {/* <button className={classes.shuffle} onClick={viewDealerHand}>View Dealer</button> */}
+                </div>
+
+                <div className={classes.controls}>
+                    <button className={classes.shuffle} onClick={dealerHit}>Dealer Hit</button>
+                    <button className={classes.shuffle} onClick={playerHit}>Player Hit</button>
+                    <button className={classes.shuffle} onClick={checkPoints}>Check Points</button>
+                </div>
+                <div style={{ margin: '0 0 -10px' }}>Player Has</div>
+                <div className={classes.pScore}>{playerScore}</div>
+                <div className={classes.playerArea}>
+
+                    <div className={classes.player}>
+
+
+                        <div className={classes.bjCard}>
+                            <div className={classes.rankTL}>
+                                {hand[0] ? hand[0].rank : '?'}
+                            </div>
+                            <div className={classes.suite}>
+                                <div class='suite'>
+                                    {hand[0] ? showHeartPlayer() : hideHeartPlayer()}
+                                    {hand[0] ? showDiamondPlayer() : hideDiamondPlayer()}
+                                    {hand[0] ? showSpadePlayer() : hideSpadePlayer()}
+                                    {hand[0] ? showClubPlayer() : hideClubPlayer()}
+
+                                    <img class='player-club' alt='club' src={club} />
+                                    <img class='player-spade' alt='spade' src={spade} />
+                                    <img class='player-heart' alt='heart' src={heart} />
+                                    <img class='player-diamond' alt='diamond' src={diamond} />
+                                </div>
+                            </div>
+                            <div className={classes.rankBR}>
+                                {hand[0] ? hand[0].rank : '?'}
+                            </div>
+                        </div>
+
+                        <div className={classes.bjCard} >
+                            <div className={classes.rankTL}>
+                                {hand[1] ? hand[1].rank : '?'}
+                            </div>
+                            <div className={classes.suite}>
+                                <div class='suite'>
+                                    {dealerHandState[1] ? showHeartPlayer() : hideHeartPlayer()}
+                                    {dealerHandState[1] ? showDiamondPlayer() : hideDiamondPlayer()}
+                                    {dealerHandState[1] ? showSpadePlayer() : hideSpadePlayer()}
+                                    {dealerHandState[1] ? showClubPlayer() : hideClubPlayer()}
+
+                                    <img class='player-club' alt='club' src={club} />
+                                    <img class='player-spade' alt='spade' src={spade} />
+                                    <img class='player-heart' alt='heart' src={heart} />
+                                    <img class='player-diamond' alt='diamond' src={diamond} />
+                                </div>
+                            </div>
+                            <div className={classes.rankBR}>
+                                {hand[1] ? hand[1].rank : '?'}
+                            </div>
+                        </div>
+                        {/* <Card /> */}
+                    </div>
+                </div>
+
+            </div>
+        </div >
     )
 }

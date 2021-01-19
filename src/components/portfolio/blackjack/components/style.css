@@ -37,3 +37,18 @@
 .player-club{
     display: none;
 }
+
+#container {
+    /*centers in the container*/
+    text-align: center;
+  }
+  
+  div .circTxt {
+    /*allows for centering*/
+    display: inline-block;
+    /*adjust as needed*/
+    margin-bottom: 128px;
+    color: #111;
+    font-size: 2em;
+    z-index: -1000
+  }
