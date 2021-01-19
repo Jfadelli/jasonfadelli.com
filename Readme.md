@@ -4,7 +4,8 @@
 ### curr
 1. remove home button on home page | jsx
 2. transitions within react-router-dom
-3. include links to the repos 
+3. include links to the repos
+4. blackjack
 
 
 ## known bugs
