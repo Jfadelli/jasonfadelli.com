@@ -6,6 +6,8 @@ import diamond from '../static/diamond.svg'
 import heart from '../static/heart.svg'
 import './style.css'
 
+import { dealerShowHeart } from './suiteHandler'
+
 // import Player from './player'
 // import Dealer from './dealer'
 
@@ -30,29 +32,29 @@ export default function Table() {
         }
     }
 
-    class Player {
-        constructor(hand, score){
-        this.hand = hand
-        this.score = score
-        }
-    }
-    
+    // class Player {
+    //     constructor(hand, score){
+    //     this.hand = hand
+    //     this.score = score
+    //     }
+    // }
+
     const heartQS = document.querySelectorAll('.heart')
     const diamondQS = document.querySelectorAll('.diamond')
     const clubQS = document.querySelectorAll('.club')
     const spadeQS = document.querySelectorAll('.spade')
 
-    const dealerShowHeart = () => {
-        let i;
-        for (i = 0; i < dealerHandState.length; i++) {
-            if (dealerHandState[i].suite === 'hearts') {
-                try { heartQS[i].style.display = 'flex' } catch { break; }
-                try { diamondQS[i].style.display = 'none' } catch { break; }
-                try { clubQS[i].style.display = 'none' } catch { break; }
-                try { spadeQS[i].style.display = 'none' } catch { break; }
-            }
-        }
-    }
+    // const dealerShowHeart = () => {
+    //     let i;
+    //     for (i = 0; i < dealerHandState.length; i++) {
+    //         if (dealerHandState[i].suite === 'hearts') {
+    //             try { heartQS[i].style.display = 'flex' } catch { break; }
+    //             try { diamondQS[i].style.display = 'none' } catch { break; }
+    //             try { clubQS[i].style.display = 'none' } catch { break; }
+    //             try { spadeQS[i].style.display = 'none' } catch { break; }
+    //         }
+    //     }
+    // }
 
     const dealerHideHeart = () => {
         let i;
@@ -380,7 +382,7 @@ export default function Table() {
 
                         <div className={classes.suite}>
                             <div className='suite'>
-                                {dealerHandState[0] ? dealerShowHeart() : dealerHideHeart()}
+                                {dealerHandState[0] ? dealerShowHeart(dealerHandState) : dealerHideHeart()}
                                 {dealerHandState[0] ? dealerShowDiamond() : dealerHideDiamond()}
                                 {dealerHandState[0] ? dealerShowSpade() : dealerHideSpade()}
                                 {dealerHandState[0] ? dealerShowClub() : dealerHideClub()}
