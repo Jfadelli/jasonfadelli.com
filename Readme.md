@@ -3,13 +3,25 @@
 ## under development
 ### curr
 1. remove home button on home page | jsx
-2. transitions within react-router-dom
+2. blackjack
+   1. win conditions
+   2. render hit cards (dynamic)
+   3. draw conditions
+   4. counter
+   5. chips
+   6. chip wheel
+   7. accounts with bank
+   8. animations for cards
+   9. sfx
 3. include links to the repos
-4. blackjack
+
 
 
 ## known bugs
 1. sizing/ styling / fitment home page.
+
+## highly celebrated trivial tasks completed
+1. transitions within react-router-dom
 
 <!-- Scratch  -->
 
