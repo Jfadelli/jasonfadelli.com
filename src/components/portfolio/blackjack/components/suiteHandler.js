@@ -1,4 +1,3 @@
-
 const dealerChangeSuite = (props) => {
     const heartQS = document.querySelectorAll('.heart')
     const diamondQS = document.querySelectorAll('.diamond')
@@ -76,7 +75,6 @@ const playerChangeSuite = (props) => {
         }
     }
 }
-
 
 export {
     dealerChangeSuite,

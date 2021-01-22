@@ -78,23 +78,27 @@ export default function Table() {
     }
 
     const playerHit = () => {
-        deck = deckInPlay
-        let randomIndex = Math.floor(Math.random() * Math.floor(deck.length))
-        let tempHand = playerHandState
-        tempHand.push(deck[randomIndex])
-        deck.pop(randomIndex)
-        setDeckInPlay(deck)
-        setPlayerHandState(tempHand)
+        try {
+            deck = deckInPlay
+            let randomIndex = Math.floor(Math.random() * Math.floor(deck.length))
+            let tempHand = playerHandState
+            tempHand.push(deck[randomIndex])
+            deck.pop(randomIndex)
+            setDeckInPlay(deck)
+            setPlayerHandState(tempHand)
+        } catch { void 0 }
     }
 
     const dealerHit = () => {
-        deck = deckInPlay;
-        let randomIndex = Math.floor(Math.random() * Math.floor(deck.length))
-        let tempHand = dealerHandState;
-        tempHand.push(deck[randomIndex])
-        deck.pop(randomIndex)
-        setDeckInPlay(deck)
-        setDealerHandState(tempHand)
+        try {
+            deck = deckInPlay;
+            let randomIndex = Math.floor(Math.random() * Math.floor(deck.length))
+            let tempHand = dealerHandState;
+            tempHand.push(deck[randomIndex])
+            deck.pop(randomIndex)
+            setDeckInPlay(deck)
+            setDealerHandState(tempHand)
+        } catch { void 0 }
     }
 
     const viewPlayerHand = () => {
@@ -161,20 +165,17 @@ export default function Table() {
     useEffect(() => {
         circularText("BLACKJACK", 500, 0);
         function circularText(txt, radius, classIndex) {
-
             txt = txt.split("");
             classIndex = document.getElementsByClassName("circTxt")[classIndex];
-
             var deg = 60 / txt.length,
                 origin = -27;
-
             txt.forEach((ea) => {
                 ea = `<p style='height:${radius}px;position:absolute;transform:rotate(${origin}deg);transform-origin:0 100%'>${ea}</p>`;
                 classIndex.innerHTML += ea;
                 origin += deg;
             });
         }
-
+        checkPoints()
     });
 
     return (
