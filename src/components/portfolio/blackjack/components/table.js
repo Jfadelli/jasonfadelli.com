@@ -1,15 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { useStyles } from '../../../../style/style'
-import club from '../static/club.svg'
-import spade from '../static/spade.svg'
-import diamond from '../static/diamond.svg'
-import heart from '../static/heart.svg'
 import './style.css'
 
-import { dealerChangeSuite, playerChangeSuite } from './suiteHandler'
-
-// import Player from './player'
-// import Dealer from './dealer'
+import DealerCardOne from './cards/dealerCardOne'
+import DealerCardTwo from './cards/dealerCardTwo'
+import PlayerCardOne from './cards/playerCardOne'
+import PlayerCardTwo from './cards/playerCardTwo'
 
 export default function Table() {
     const classes = useStyles()
@@ -20,7 +16,7 @@ export default function Table() {
     const [deckInPlay, setDeckInPlay] = useState([])
 
     let suites = ['hearts', 'diamonds', 'clubs', 'spades']
-    let ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'j', 'q', 'k', 'a']
+    let ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
 
     let deck = []
 
@@ -30,13 +26,6 @@ export default function Table() {
             this.suite = suite;
         }
     }
-
-    // class Player {
-    //     constructor(hand, score){
-    //     this.hand = hand
-    //     this.score = score
-    //     }
-    // }
 
     const newGame = () => {
         deck = []
@@ -55,21 +44,26 @@ export default function Table() {
         let dealerHand = [];
         let playerHand = [];
         let randomIndex;
+        let currCard;
 
         randomIndex = Math.floor(Math.random() * Math.floor(deck.length))
-        playerHand.push(deck[randomIndex])
+        currCard = deck[randomIndex]
+        playerHand.push(currCard)
         deck = deck.filter(item => item !== deck[randomIndex])
 
         randomIndex = Math.floor(Math.random() * Math.floor(deck.length))
-        dealerHand.push(deck[randomIndex])
+        currCard = deck[randomIndex]
+        playerHand.push(currCard)
         deck = deck.filter(item => item !== deck[randomIndex])
 
         randomIndex = Math.floor(Math.random() * Math.floor(deck.length))
-        playerHand.push(deck[randomIndex])
+        currCard = deck[randomIndex]
+        dealerHand.push(currCard)
         deck = deck.filter(item => item !== deck[randomIndex])
 
         randomIndex = Math.floor(Math.random() * Math.floor(deck.length))
-        dealerHand.push(deck[randomIndex])
+        currCard = deck[randomIndex]
+        dealerHand.push(currCard)
         deck = deck.filter(item => item !== deck[randomIndex])
 
         setPlayerHandState(playerHand)
@@ -142,8 +136,8 @@ export default function Table() {
             else if (playerHandState[i].rank === '7') { playerTempScore += 7 }
             else if (playerHandState[i].rank === '8') { playerTempScore += 8 }
             else if (playerHandState[i].rank === '9') { playerTempScore += 9 }
-            else if (playerHandState[i].rank === '10' || 'j' || 'q' || 'k') { playerTempScore += 10; }
-            else if (playerHandState[i].rank === 'a') { playerTempScore += 11; }
+            else if (playerHandState[i].rank === '10' || 'J' || 'Q' || 'K') { playerTempScore += 10; }
+            else if (playerHandState[i].rank === 'A') { playerTempScore += 11; }
             setPlayerScore(playerTempScore)
         }
 
@@ -156,8 +150,8 @@ export default function Table() {
             else if (dealerHandState[i].rank === '7') { dealerTempScore += 7 }
             else if (dealerHandState[i].rank === '8') { dealerTempScore += 8 }
             else if (dealerHandState[i].rank === '9') { dealerTempScore += 9 }
-            else if (dealerHandState[i].rank === '10' || 'j' || 'q' || 'k') { dealerTempScore += 10; }
-            else if (dealerHandState[i].rank === 'a') { dealerTempScore += 11 }
+            else if (dealerHandState[i].rank === '10' || 'J' || 'Q' || 'K') { dealerTempScore += 10; }
+            else if (dealerHandState[i].rank === 'A') { dealerTempScore += 11 }
             setDealerScore(dealerTempScore)
         }
     }
@@ -186,55 +180,10 @@ export default function Table() {
             </div>
             <div className={classes.bjTable}>
 
+                {/* Dealer Area */}
                 <div className={classes.dealerArea}>
-
-                    <div className={classes.bjCard}>
-                        <div className={classes.rankTL}>
-                            {dealerHandState[0] ? dealerHandState[0].rank : '?'}
-                        </div>
-
-                        <div className={classes.suite}>
-                            <div className='suite'>
-                                {dealerHandState[0] ? dealerChangeSuite({ dealerHandState }) : null}
-                                {dealerHandState[0] ? dealerChangeSuite({ dealerHandState }) : null}
-                                {dealerHandState[0] ? dealerChangeSuite({ dealerHandState }) : null}
-                                {dealerHandState[0] ? dealerChangeSuite({ dealerHandState }) : null}
-
-                                <img className='club' alt='club' src={club} />
-                                <img className='spade' alt='spade' src={spade} />
-                                <img className='heart' alt='heart' src={heart} />
-                                <img className='diamond' alt='diamond' src={diamond} />
-                            </div>
-                        </div>
-
-                        <div className={classes.rankBR}>
-                            {dealerHandState[0] ? dealerHandState[0].rank : '?'}
-                        </div>
-                    </div>
-
-                    <div className={classes.bjCard}>
-                        <div className={classes.rankTL}>
-                            {dealerHandState[1] ? dealerHandState[1].rank : '?'}
-                        </div>
-
-                        <div className={classes.suite}>
-                            <div className='suite'>
-                                {dealerHandState[1] ? dealerChangeSuite({ dealerHandState }) : null}
-                                {dealerHandState[1] ? dealerChangeSuite({ dealerHandState }) : null}
-                                {dealerHandState[1] ? dealerChangeSuite({ dealerHandState }) : null}
-                                {dealerHandState[1] ? dealerChangeSuite({ dealerHandState }) : null}
-
-                                <img className='club' alt='club' src={club} />
-                                <img className='spade' alt='spade' src={spade} />
-                                <img className='heart' alt='heart' src={heart} />
-                                <img className='diamond' alt='diamond' src={diamond} />
-                            </div>
-                        </div>
-
-                        <div className={classes.rankBR}>
-                            {dealerHandState[1] ? dealerHandState[1].rank : '?'}
-                        </div>
-                    </div>
+                    <DealerCardOne dealerHandState={dealerHandState} />
+                    <DealerCardTwo dealerHandState={dealerHandState} />
                 </div>
                 <div style={{ margin: '0 0 -10px' }}>Dealer Has</div>
                 <div className={classes.pScore}>{dealerScore}</div>
@@ -257,50 +206,9 @@ export default function Table() {
                 {/* Player Area */}
                 <div className={classes.playerArea}>
                     <div className={classes.player}>
-                        <div className={classes.bjCard}>
-                            <div className={classes.rankTL}>
-                                {playerHandState[0] ? playerHandState[0].rank : '?'}
-                            </div>
-                            <div className={classes.suite}>
-                                <div className='suite'>
-                                    {playerHandState[0] ? playerChangeSuite({ playerHandState }) : null}
-                                    {playerHandState[0] ? playerChangeSuite({ playerHandState }) : null}
-                                    {playerHandState[0] ? playerChangeSuite({ playerHandState }) : null}
-                                    {playerHandState[0] ? playerChangeSuite({ playerHandState }) : null}
+                        <PlayerCardOne playerHandState={playerHandState} />
+                        <PlayerCardTwo playerHandState={playerHandState} />
 
-                                    <img className='player-club' alt='club' src={club} />
-                                    <img className='player-spade' alt='spade' src={spade} />
-                                    <img className='player-heart' alt='heart' src={heart} />
-                                    <img className='player-diamond' alt='diamond' src={diamond} />
-                                </div>
-                            </div>
-                            <div className={classes.rankBR}>
-                                {playerHandState[0] ? playerHandState[0].rank : '?'}
-                            </div>
-                        </div>
-
-                        <div className={classes.bjCard} >
-                            <div className={classes.rankTL}>
-                                {playerHandState[1] ? playerHandState[1].rank : '?'}
-                            </div>
-                            <div className={classes.suite}>
-                                <div className='suite'>
-                                    {playerHandState[1] ? playerChangeSuite({ playerHandState }) : null}
-                                    {playerHandState[1] ? playerChangeSuite({ playerHandState }) : null}
-                                    {playerHandState[1] ? playerChangeSuite({ playerHandState }) : null}
-                                    {playerHandState[1] ? playerChangeSuite({ playerHandState }) : null}
-
-                                    <img className='player-club' alt='club' src={club} />
-                                    <img className='player-spade' alt='spade' src={spade} />
-                                    <img className='player-heart' alt='heart' src={heart} />
-                                    <img className='player-diamond' alt='diamond' src={diamond} />
-                                </div>
-                            </div>
-                            <div className={classes.rankBR}>
-                                {playerHandState[1] ? playerHandState[1].rank : '?'}
-                            </div>
-                        </div>
-                        {/* <Card /> */}
                     </div>
                 </div>
 
