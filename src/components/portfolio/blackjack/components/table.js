@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useStyles } from '../../../../style/style'
 import club from '../static/club.svg'
 import spade from '../static/spade.svg'
@@ -6,7 +6,7 @@ import diamond from '../static/diamond.svg'
 import heart from '../static/heart.svg'
 import './style.css'
 
-// import { dealerShowHeart, dealerHideHeart} from './suiteHandler'
+import { dealerChangeSuite, playerChangeSuite } from './suiteHandler'
 
 // import Player from './player'
 // import Dealer from './dealer'
@@ -37,122 +37,6 @@ export default function Table() {
     //     this.score = score
     //     }
     // }
-
-    const heartQS = document.querySelectorAll('.heart')
-    const diamondQS = document.querySelectorAll('.diamond')
-    const clubQS = document.querySelectorAll('.club')
-    const spadeQS = document.querySelectorAll('.spade')
-
-    const dealerShowSuite = () => {
-        let i;
-        for (i = 0; i < dealerHandState.length; i++) {
-            if (dealerHandState[i].suite === 'hearts') {
-                try { heartQS[i].style.display = 'flex' } catch { break; }
-                try { diamondQS[i].style.display = 'none' } catch { break; }
-                try { clubQS[i].style.display = 'none' } catch { break; }
-                try { spadeQS[i].style.display = 'none' } catch { break; }
-            }
-            if (dealerHandState[i].suite === 'diamonds') {
-                try { heartQS[i].style.display = 'none' } catch { break; }
-                try { diamondQS[i].style.display = 'flex' } catch { break; }
-                try { clubQS[i].style.display = 'none' } catch { break; }
-                try { spadeQS[i].style.display = 'none' } catch { break; }
-            }
-            if (dealerHandState[i].suite === 'spades') {
-                try { heartQS[i].style.display = 'none' } catch { break; }
-                try { diamondQS[i].style.display = 'none' } catch { break; }
-                try { clubQS[i].style.display = 'none' } catch { break; }
-                try { spadeQS[i].style.display = 'flex' } catch { break; }
-            }
-            if (dealerHandState[i].suite === 'clubs') {
-                try { heartQS[i].style.display = 'none' } catch { break; }
-                try { diamondQS[i].style.display = 'none' } catch { break; }
-                try { clubQS[i].style.display = 'flex' } catch { break; }
-                try { spadeQS[i].style.display = 'none' } catch { break; }
-            }
-
-        }
-    }
-
-    const dealerHideSuite = () => {
-        let i;
-        for (i = 0; i < dealerHandState.length; i++) {
-            if (!dealerHandState[i]) { break; }
-            else if (dealerHandState[i].suite !== 'hearts') {
-                try { heartQS[i].style.display = 'none' } catch { break; }
-            }
-            if (!dealerHandState[i]) { break; }
-            else if (dealerHandState[i].suite !== 'diamonds') {
-                try { diamondQS[i].style.display = 'none' } catch { break; }
-            }
-            if (!dealerHandState[i]) { break; }
-            else if (dealerHandState[i].suite !== 'spades') {
-                try { spadeQS[i].style.display = 'none' } catch { break; }
-            }
-            if (!dealerHandState[i]) { break; }
-            else if (dealerHandState[i].suite !== 'clubs') {
-                try { clubQS[i].style.display = 'none' } catch { break; }
-            }
-        }
-    }
-
-    const pHeartQS = document.querySelectorAll('.player-heart')
-    const pDiamondQS = document.querySelectorAll('.player-diamond')
-    const pClubQS = document.querySelectorAll('.player-club')
-    const pSpadeQS = document.querySelectorAll('.player-spade')
-
-    const playerShowSuite = () => {
-        let i;
-        for (i = 0; i < playerHandState.length; i++) {
-            if (playerHandState[i].suite === 'hearts') {
-                try { pHeartQS[i].style.display = 'flex' } catch { break; }
-                try { pDiamondQS[i].style.display = 'none' } catch { break; }
-                try { pClubQS[i].style.display = 'none' } catch { break; }
-                try { pSpadeQS[i].style.display = 'none' } catch { break; }
-            }
-            if (playerHandState[i].suite === 'diamonds') {
-                try { pHeartQS[i].style.display = 'none' } catch { break; }
-                try { pDiamondQS[i].style.display = 'flex' } catch { break; }
-                try { pClubQS[i].style.display = 'none' } catch { break; }
-                try { pSpadeQS[i].style.display = 'none' } catch { break; }
-            }
-            if (playerHandState[i].suite === 'spades') {
-                try { pHeartQS[i].style.display = 'none' } catch { break; }
-                try { pDiamondQS[i].style.display = 'none' } catch { break; }
-                try { pClubQS[i].style.display = 'none' } catch { break; }
-                try { pSpadeQS[i].style.display = 'flex' } catch { break; }
-            }
-            if (playerHandState[i].suite === 'clubs') {
-                try { pHeartQS[i].style.display = 'none' } catch { break; }
-                try { pDiamondQS[i].style.display = 'none' } catch { break; }
-                try { pClubQS[i].style.display = 'flex' } catch { break; }
-                try { pSpadeQS[i].style.display = 'none' } catch { break; }
-            }
-        }
-    }
-
-    const playerHideSuite = () => {
-        let i;
-        for (i = 0; i < playerHandState.length; i++) {
-            if (!playerHandState[i]) { break; }
-            else if (playerHandState[i].suite !== 'hearts') {
-                try { pHeartQS[i].style.display = 'none' } catch { break; }
-            }
-
-            if (!playerHandState[i]) { break; }
-            else if (playerHandState[i].suite !== 'diamonds') {
-                try { pDiamondQS[i].style.display = 'none' } catch { break; }
-            }
-            if (!playerHandState[i]) { break; }
-            else if (playerHandState[i].suite !== 'spades') {
-                try { pSpadeQS[i].style.display = 'none' } catch { break; }
-            }
-            if (!playerHandState[i]) { break; }
-            else if (playerHandState[i].suite !== 'clubs') {
-                try { pClubQS[i].style.display = 'none' } catch { break; }
-            }
-        }
-    }
 
     const newGame = () => {
         deck = []
@@ -273,12 +157,12 @@ export default function Table() {
             setDealerScore(dealerTempScore)
         }
     }
-    document.addEventListener("DOMContentLoaded", function (event) {
-        circularText("BLACKJACK", 500, 0);
 
+    useEffect(() => {
+        circularText("BLACKJACK", 500, 0);
         function circularText(txt, radius, classIndex) {
 
-            txt = txt.split("")
+            txt = txt.split("");
             classIndex = document.getElementsByClassName("circTxt")[classIndex];
 
             var deg = 60 / txt.length,
@@ -290,8 +174,8 @@ export default function Table() {
                 origin += deg;
             });
         }
-    });
 
+    });
 
     return (
         <div>
@@ -310,10 +194,10 @@ export default function Table() {
 
                         <div className={classes.suite}>
                             <div className='suite'>
-                                {dealerHandState[0] ? dealerShowSuite : dealerHideSuite()}
-                                {dealerHandState[0] ? dealerShowSuite() : dealerHideSuite()}
-                                {dealerHandState[0] ? dealerShowSuite() : dealerHideSuite()}
-                                {dealerHandState[0] ? dealerShowSuite() : dealerHideSuite()}
+                                {dealerHandState[0] ? dealerChangeSuite({ dealerHandState }) : null}
+                                {dealerHandState[0] ? dealerChangeSuite({ dealerHandState }) : null}
+                                {dealerHandState[0] ? dealerChangeSuite({ dealerHandState }) : null}
+                                {dealerHandState[0] ? dealerChangeSuite({ dealerHandState }) : null}
 
                                 <img className='club' alt='club' src={club} />
                                 <img className='spade' alt='spade' src={spade} />
@@ -334,10 +218,10 @@ export default function Table() {
 
                         <div className={classes.suite}>
                             <div className='suite'>
-                                {dealerHandState[1] ? dealerShowSuite() : dealerHideSuite()}
-                                {dealerHandState[1] ? dealerShowSuite() : dealerHideSuite()}
-                                {dealerHandState[1] ? dealerShowSuite() : dealerHideSuite()}
-                                {dealerHandState[1] ? dealerShowSuite() : dealerHideSuite()}
+                                {dealerHandState[1] ? dealerChangeSuite({ dealerHandState }) : null}
+                                {dealerHandState[1] ? dealerChangeSuite({ dealerHandState }) : null}
+                                {dealerHandState[1] ? dealerChangeSuite({ dealerHandState }) : null}
+                                {dealerHandState[1] ? dealerChangeSuite({ dealerHandState }) : null}
 
                                 <img className='club' alt='club' src={club} />
                                 <img className='spade' alt='spade' src={spade} />
@@ -378,10 +262,10 @@ export default function Table() {
                             </div>
                             <div className={classes.suite}>
                                 <div className='suite'>
-                                    {playerHandState[0] ? playerShowSuite() : playerHideSuite()}
-                                    {playerHandState[0] ? playerShowSuite() : playerHideSuite()}
-                                    {playerHandState[0] ? playerShowSuite() : playerHideSuite()}
-                                    {playerHandState[0] ? playerShowSuite() : playerHideSuite()}
+                                    {playerHandState[0] ? playerChangeSuite({ playerHandState }) : null}
+                                    {playerHandState[0] ? playerChangeSuite({ playerHandState }) : null}
+                                    {playerHandState[0] ? playerChangeSuite({ playerHandState }) : null}
+                                    {playerHandState[0] ? playerChangeSuite({ playerHandState }) : null}
 
                                     <img className='player-club' alt='club' src={club} />
                                     <img className='player-spade' alt='spade' src={spade} />
@@ -400,10 +284,10 @@ export default function Table() {
                             </div>
                             <div className={classes.suite}>
                                 <div className='suite'>
-                                    {playerHandState[1] ? playerShowSuite() : playerHideSuite()}
-                                    {playerHandState[1] ? playerShowSuite() : playerHideSuite()}
-                                    {playerHandState[1] ? playerShowSuite() : playerHideSuite()}
-                                    {playerHandState[1] ? playerShowSuite() : playerHideSuite()}
+                                    {playerHandState[1] ? playerChangeSuite({ playerHandState }) : null}
+                                    {playerHandState[1] ? playerChangeSuite({ playerHandState }) : null}
+                                    {playerHandState[1] ? playerChangeSuite({ playerHandState }) : null}
+                                    {playerHandState[1] ? playerChangeSuite({ playerHandState }) : null}
 
                                     <img className='player-club' alt='club' src={club} />
                                     <img className='player-spade' alt='spade' src={spade} />
