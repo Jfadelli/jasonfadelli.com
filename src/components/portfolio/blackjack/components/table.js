@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import Notifications, { notify } from 'react-notify-toast';
 import { useStyles } from '../../../../style/style'
 import './style.css'
 
@@ -80,6 +81,7 @@ export default function Table() {
             deck.pop(randomIndex)
             setDeckInPlay(deck)
             setPlayerHandState(tempHand)
+            checkPoints()
         } catch { void 0 }
     }
 
@@ -92,6 +94,7 @@ export default function Table() {
             deck.pop(randomIndex)
             setDeckInPlay(deck)
             setDealerHandState(tempHand)
+            checkPoints()
         } catch { void 0 }
     }
 
@@ -118,6 +121,7 @@ export default function Table() {
         viewPlayerHand();
     }
 
+
     const checkPoints = () => {
         setPlayerScore(0)
         setDealerScore(0)
@@ -136,8 +140,8 @@ export default function Table() {
             else if (playerHandState[i].rank === '7') { playerTempScore += 7 }
             else if (playerHandState[i].rank === '8') { playerTempScore += 8 }
             else if (playerHandState[i].rank === '9') { playerTempScore += 9 }
+            else if (playerHandState[i].rank === 'A') { playerTempScore += 11; console.log(`i'm and ace and I'm worth 11`) } 
             else if (playerHandState[i].rank === '10' || 'J' || 'Q' || 'K') { playerTempScore += 10; }
-            else if (playerHandState[i].rank === 'A') { playerTempScore += 11; }
             setPlayerScore(playerTempScore)
         }
 
@@ -150,11 +154,58 @@ export default function Table() {
             else if (dealerHandState[i].rank === '7') { dealerTempScore += 7 }
             else if (dealerHandState[i].rank === '8') { dealerTempScore += 8 }
             else if (dealerHandState[i].rank === '9') { dealerTempScore += 9 }
-            else if (dealerHandState[i].rank === '10' || 'J' || 'Q' || 'K') { dealerTempScore += 10; }
             else if (dealerHandState[i].rank === 'A') { dealerTempScore += 11 }
+            else if (dealerHandState[i].rank === '10' || 'J' || 'Q' || 'K') { dealerTempScore += 10; }
             setDealerScore(dealerTempScore)
         }
+
+        const bust = () => {
+            if (playerScore > 21) {
+                let bustColor = { background: '#FFFFFF', text: "#FF205D" };
+                notify.show('You Busted!', "custom", '1000', bustColor)
+            } if (playerHandSize < 3) {
+                notify.hide()
+            }
+        }
+
+        bust()
     }
+
+    const endConditions = () => {
+        let winColor = { background: '#FFFFFF', text: "#FF205D" };
+        let loseColor = { background: '#FFFFFF', text: "#FF205D" };
+
+        if (dealerScore > 21) {
+            notify.show('Winner Winner!', "custom", '1000', winColor)
+        } else if (playerScore > dealerScore) {
+            notify.show('Winner Winner!', "custom", '1000', winColor)
+        } else if (dealerScore > 21) {
+            notify.show('Winner Winner!', "custom", '1000', winColor)
+        } else if (playerScore < dealerScore) {
+            notify.show('You lose! Deal Again...', "custom", '1000', loseColor)
+        } else if (dealerScore === 21) {
+            notify.show('You lose! Deal Again...', "custom", '1000', loseColor)
+        }
+    }
+
+
+    const dealerAI = (playerStayFlag) => {
+        while (true) {
+            if (dealerScore < 17) {
+                dealerHit()
+                return true
+            } else { return false }
+        }
+    }
+
+
+    const playerStay = () => {
+        let playerStayFlag = true
+        dealerAI()
+        endConditions()
+        return playerStayFlag
+    }
+
 
     useEffect(() => {
         circularText("BLACKJACK", 500, 0);
@@ -172,8 +223,11 @@ export default function Table() {
         checkPoints()
     });
 
+
+
     return (
         <div>
+            <Notifications options={{ top: '80%', timeout: '20000', animationDuration: '500' }} />
             <div className="" id='container'>
                 <div className="circTxt" id="test">
                 </div>
@@ -191,12 +245,12 @@ export default function Table() {
                 <div className={classes.controls}>
                     <button className={classes.shuffle} onClick={deal}> Deal Cards </button>
                     <button className={classes.shuffle} onClick={viewHands}>View Hands</button>
-                    {/* <button className={classes.shuffle} onClick={suiteHandler}>Suite</button> */}
+                    <button className={classes.shuffle} onClick={playerStay}>Player Stay</button>
                     {/* <button className={classes.shuffle} onClick={viewDealerHand}>View Dealer</button> */}
                 </div>
 
                 <div className={classes.controls}>
-                    <button className={classes.shuffle} onClick={dealerHit}>Dealer Hit</button>
+                    {/* <button className={classes.shuffle} onClick={dealerHit}>Dealer Hit</button> */}
                     <button className={classes.shuffle} onClick={playerHit}>Player Hit</button>
                     <button className={classes.shuffle} onClick={checkPoints}>Check Points</button>
                 </div>
@@ -204,7 +258,9 @@ export default function Table() {
                 <div className={classes.pScore}>{playerScore}</div>
 
                 {/* Player Area */}
+
                 <div className={classes.playerArea}>
+
                     <div className={classes.player}>
                         <PlayerCardOne playerHandState={playerHandState} />
                         <PlayerCardTwo playerHandState={playerHandState} />
