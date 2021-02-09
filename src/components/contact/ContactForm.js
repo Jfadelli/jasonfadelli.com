@@ -36,7 +36,7 @@ export default function Contact() {
 
     //////////////// HELPERS ////////////////
     const postNewMessage = message => {
-        axios.post('https://kwcsd-mail-util.herokuapp.com/api/sendJF', message)
+        axios.post('https://kwcsd-mail-util.herokuapp.com/api/send/jasonfadelli', message)
             .then(res => {
                 if (res.data.status === 'success') {
                     alert('Message Sent.');
@@ -135,6 +135,7 @@ export default function Contact() {
                                 type='tel'
                                 placeholder='  phone'
                                 name='phone'
+                                maxLength='10'
                             />
 
                             <label> Message</label>
@@ -145,15 +146,14 @@ export default function Contact() {
                                 placeholder=' type your message here'
                                 name="message"
                             />
-
+                            <div>{formErrors.email}</div>
+                            <div>{formErrors.phone}</div>
                             <button disabled={disabled} onSubmit={onSubmitHandler}> Send</button>
                         </form>
                     </div>
                     <img style={styles.container(isHidden)} className={classes.contactImg} alt="generic team working together" src={mail} />
                 </div>
             </div>
-
-            {/* <Footer /> */}
         </div>
     )
 }

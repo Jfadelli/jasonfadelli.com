@@ -3,11 +3,14 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route } from 'react-router-dom'
-import './index.css'
+import './reset.css'
+import './bg.css'
 
 ReactDOM.render(
   <BrowserRouter>
+  <div class="bg">
     <Route path="/" component={App} />
+    </div>
   </BrowserRouter>,
   document.getElementById('root')
 );

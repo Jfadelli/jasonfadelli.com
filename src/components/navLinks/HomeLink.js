@@ -10,7 +10,7 @@ export default function ServicesOffered() {
   return (
     <div className={classes.navRoot}>
       <div>
-        <NavLink className={classes.link} to='/' >
+        <NavLink className={classes.link} to='/home' >
           <Button className={classes.navButton}> Home </Button>
         </NavLink>
       </div>

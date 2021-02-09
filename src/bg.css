@@ -1,0 +1,10 @@
+.bg {
+    position: absolute;
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+    width: 100vw;
+    min-height: 100vh;
+    left: 0;
+    right: 0;
+    background: url(./static/bg2.jpg) no-repeat center center fixed;
+    background-size: cover;
+}

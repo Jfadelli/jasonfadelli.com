@@ -1,13 +1,15 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom'
 import { useStyles } from './style/style'
-import './fade.css'
+import './style/fade.css'
+
 import {
   CSSTransition,
   TransitionGroup,
 } from 'react-transition-group';
 
 // Components
+import Landing from './components/Landing'
 import Nav from './components/Nav'
 import Home from './components/Home'
 
@@ -29,17 +31,19 @@ function App() {
   const classes = useStyles();
   return (
     <div className={classes.app}>
-      {/* <div className={classes.topSpace} /> */}
       <Nav />
 
-      <Route render={({location}) => (
+      <Route render={({ location }) => (
         <TransitionGroup>
           <CSSTransition
             key={location.key}
             timeout={500}
             classNames='fade'>
             <Switch location={location}>
-              <Route exact path='/' component={Home} />
+                  <Route exact path='/' component={Landing} />
+      
+              {/* Home */}
+              <Route path='/home' component={Home} />
 
               {/* about */}
               <Route path='/portfolio/kwc-san-diego' component={Kwcsd} />
@@ -53,6 +57,7 @@ function App() {
               <Route path='/about/personal-life' component={PersonalLife} />
               <Route path='/about/Kikis-Coding' component={Kiki} />
             </Switch>
+          
           </CSSTransition>
         </TransitionGroup>
       )} />

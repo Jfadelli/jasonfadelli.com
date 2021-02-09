@@ -8,11 +8,11 @@
 
 const colors = {
     dark: '#1c1c1c', // eerie black
-    main: '#004FFF ', // Blue RYB
+    main: '#3d3d3d', // Blue RYB
     alt: '#EBF1FF', // Magnolia'
     light: '#F8FAF0', // ivory
     accent: '#709DFF', // Red Crayola
-    bg: '#FFFFFF', // ivory
+    bg: '#eeeeee', // ivory
 }
 // '#C1CAD6' // Beau Blue
 export { 

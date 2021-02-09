@@ -27,12 +27,10 @@ export default function Nav() {
   <div className={classes.spacedDiv}>
     <div className={classes.navBar} style={styles.container(isRow)}>
       <Toolbar className={classes.navToolbar} style={styles.container(isRow)}>
-        {/* <a href='/'> <img style={logoStyle.container(isSmall)} src={Logo} alt='keller williams commercial' /></a> */}
         <Home />
         <Portfolio />
         <About />
         <Contact />
-
       </Toolbar>
     </div>
   </div>
