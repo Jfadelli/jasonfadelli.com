@@ -24,6 +24,7 @@ import Contact from './components/contact/ContactForm'
 // About
 import PersonalLife from './components/about/PersonalLife'
 import Kiki from './components/about/Kiki'
+import WorkExperience from './components/about/WorkExperience'
 
 
 
@@ -56,6 +57,7 @@ function App() {
               {/* about */}
               <Route path='/about/personal-life' component={PersonalLife} />
               <Route path='/about/Kikis-Coding' component={Kiki} />
+              <Route path='/about/work-experience' component={WorkExperience} />
             </Switch>
           
           </CSSTransition>

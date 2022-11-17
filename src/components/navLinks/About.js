@@ -6,6 +6,7 @@ import Paper from '@material-ui/core/Paper';
 import Popper from '@material-ui/core/Popper';
 import MenuItem from '@material-ui/core/MenuItem';
 import MenuList from '@material-ui/core/MenuList';
+import WorkExperience from '../about/WorkExperience'
 import { useStyles } from './style';
 import { NavLink } from 'react-router-dom'
 
@@ -60,6 +61,7 @@ export default function About() {
               <Paper>
                 <ClickAwayListener onClickAway={handleClose}>
                   <MenuList className={classes.menuList} autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
+                    <NavLink className={classes.link} to = '/about/work-experience'><MenuItem className={classes.menuItem} onClick={handleClose}>Work Experience</MenuItem></NavLink>
                     <NavLink className={classes.link} to = '/about/personal-life'><MenuItem className={classes.menuItem} onClick={handleClose}>Personal Life</MenuItem></NavLink>
 
                     {/* <NavLink className={classes.link} to = '/about/professional-life'><MenuItem className={classes.menuItem}  onClick={handleClose}>Professional Life</MenuItem></NavLink> */}

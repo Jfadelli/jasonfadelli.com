@@ -3,13 +3,11 @@ import Flippy, { FrontSide, BackSide } from 'react-flippy';
 import bjImg from '../../static/slides/krk_wine_sd/krk_wine_ss.png'
 import {FlippyStyle} from './FlippyStyle.js'
 
-
 const bullets = [
     "Custom E-Commerce Site",
     "Fully Dynamic",
     "User Friendly CMS Interface",
     "Unique Styling",
-
 ]
 
 const DefaultCardContents = ({ children }) => (

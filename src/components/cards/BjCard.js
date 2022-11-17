@@ -4,16 +4,6 @@ import bjImg from '../../static/slides/blackjack/blackjack.png'
 import { NavLink } from 'react-router-dom'
 import {FlippyStyle} from './FlippyStyle.js'
 
-// const FlippyStyle = {
-//     width: '200px',
-//     height: '300px',
-//     textAlign: 'center',
-//     color: '#FFF',
-//     fontFamily: 'sans-serif',
-//     fontSize: '25px',
-//     justifyContent: 'center'
-// }
-
 const bullets = [
     "Playable React JS Blackjack",
     "Custom Playing Card Models",
