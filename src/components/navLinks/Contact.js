@@ -51,7 +51,7 @@ export default function ServicesOffered() {
           onClick={handleToggle}
           className={classes.navButton}
         >
-          Cont_ct
+          Contact
         </Button>
         <Popper className={classes.popper} open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
           {({ TransitionProps, placement }) => (

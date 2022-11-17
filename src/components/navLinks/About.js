@@ -49,7 +49,7 @@ export default function About() {
           aria-haspopup="true"
           onClick={handleToggle}
           className={classes.navButton}
-        >_bout</Button>
+        >About</Button>
 
         <Popper className={classes.popper} open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
           {({ TransitionProps, placement }) => (
@@ -66,7 +66,7 @@ export default function About() {
 
                     {/* <NavLink className={classes.link} to = '/about/education'><MenuItem className={classes.menuItem} onClick={handleClose}>Education</MenuItem></NavLink> */}
 
-                    <NavLink className={classes.link} to = '/about/Kikis-Coding'><MenuItem className={classes.menuItem} onClick={handleClose}>kikis-coding</MenuItem></NavLink>
+                    {/* <NavLink className={classes.link} to = '/about/Kikis-Coding'><MenuItem className={classes.menuItem} onClick={handleClose}>kikis-coding</MenuItem></NavLink> */}
 
                   </MenuList>
                 </ClickAwayListener>

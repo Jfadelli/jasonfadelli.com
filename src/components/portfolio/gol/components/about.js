@@ -11,7 +11,7 @@ export default function About() {
             <div className={classes.flexCol}>
                 <Link className={classes.link} to='/portfolio/game-of-life/'>Back to the Game</Link>
                 <h1>Introduction</h1>
-                <p>Conway's Game of Life is a cellular automaton devised by the British mathematician 
+                <p className={classes.content}>Conway's Game of Life is a cellular automaton devised by the British mathematician 
                 John Horton Conway in 1970.[1] It is a zero-player game, meaning that its evolution 
                 is determined by its initial state, requiring no further input. One interacts with 
                 the Game of Life by creating an initial configuration and observing how it evolves. 
@@ -27,7 +27,7 @@ export default function About() {
                 </p>
 
                 <h3>Instructions:</h3>
-                <p>This is a zero player game. The only control given are the initial parameters. 
+                <p className={classes.content}>This is a zero player game. The only control given are the initial parameters. 
                 
                 The game will automatically load with a randomly seeded board. The rules that 
                 the game follows to decide how the board will behave, are as follows:
@@ -59,14 +59,14 @@ export default function About() {
                 </div>      
 
                 <h3>The Requirement</h3>
-                <p>I was tasked with recreating the Game of Life (GOL) in whatever language I saw fit. 
+                <p className={classes.content} >I was tasked with recreating the Game of Life (GOL) in whatever language I saw fit. 
                 So far with my education at lambda I have had experience with, HTML, CSS, Javascript, 
                 mostly in the form of React, and with Python. I elected to complete the task using React,
                 as that is the language that I am most framiliar with. 
                 </p>
                 <br/>
                 <h3>My Thought Process</h3>
-                <p>Initial planning lead me to outline several basic components that I would need to create 
+                <p className={classes.content}>Initial planning lead me to outline several basic components that I would need to create 
                 in order to replicate Conway's GOL. Those components are as follows:
                 </p>
                 <div className={classes.list}>
@@ -83,7 +83,7 @@ export default function About() {
                     <ol className={classes.specOL}>1. The Game Board</ol>
                     <ul className={classes.specUL}>The gameboard is constructed of a react class called Grid. It is 
                     initialized as an array of rows with a nested for loop that creates 
-                    an array of columns and uniquly identifies each cell as boxId i_j.</ul>
+                    an array of columns and uniquly identifies each cell as boxId i, j.</ul>
                     <ol className={classes.specOL}>2. The Box/Cell</ol>
                     <ul className={classes.specUL}>Each box is passed in from the array as props and is renderd as a div 
                     that contains a unique ID and allows the onclick event, select box. </ul>

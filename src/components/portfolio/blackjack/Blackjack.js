@@ -6,9 +6,11 @@ import './style.css'
 export default function Blackjack() {
     const classes = useStyles()
     return (
-        <div className={classes.contentWrapper}>
-            <div className={classes.content}>
-                <Table />
+        <div className={classes.root}>
+            <div className={classes.contentWrapper}>
+                <div className={classes.content}>
+                    <Table />
+                </div>
             </div>
         </div>
     )

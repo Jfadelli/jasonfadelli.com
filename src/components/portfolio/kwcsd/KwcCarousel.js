@@ -18,10 +18,9 @@ export default function KwcCarousel() {
         <div class="ia-container">
 
             <figure>
-                <img src={homeDektop} alt="Professional Landing Page" />
+                <img src={services2} alt="image02" />
                 <input type="radio" name="radio-set" />
-                <figcaption><span>Professional Landing Page</span></figcaption>
-
+                <figcaption><span>Custom Bullets</span></figcaption>
 
                 <figure>
                     <img src={gallery} alt="Dynamic Property Gallery" />
@@ -56,9 +55,11 @@ export default function KwcCarousel() {
                                         <figcaption><span>Contact Page with Validation</span></figcaption>
 
                                         <figure>
-                                            <img src={services2} alt="image02" />
+                                            <img src={homeDektop} alt="Professional Landing Page" />
                                             <input type="radio" name="radio-set" />
-                                            <figcaption><span>Custom Bullets</span></figcaption>
+                                            <figcaption><span>Professional Landing Page</span></figcaption>
+
+
 
                                         </figure>
                                     </figure>

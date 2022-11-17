@@ -198,7 +198,7 @@ function Table() {
             var deg = 60 / txt.length,
                 origin = -27;
             txt.forEach((ea) => {
-                ea = `<p style='height:${radius}px;position:absolute;transform:rotate(${origin}deg);transform-origin:0 100%'>${ea}</p>`;
+                ea = `<p className='shimmer' style='font-size: 45px;height:${radius}px;position:absolute;transform:rotate(${origin}deg);transform-origin:0 100%'>${ea}</p>`;
                 classIndex.innerHTML += ea;
                 origin += deg;
             });
@@ -232,16 +232,23 @@ function Table() {
                     <DealerHand playerStayFlag={playerStayFlag} dealerHandState={dealerHandState} />
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-evenly', wiidth: '50%' }}>
-                    <div >Dealer Has &nbsp;</div>
+                    <div style={{ color: 'white', margin: '0 0 -10px' }}>Dealer Has &nbsp;</div>
                     <div className={classes.pScore}>{dealerScore}</div>
                 </div>
                 <div className={classes.bjControls}>
-                    <button className='bjButton' onClick={deal}> Deal </button>
-                    <button className='bjButton' id='hitBtn' onClick={playerHit}>Hit</button>
-                    <button className='bjButton' onClick={playerStay}>Stay</button>
+                    <div className={classes.bjButtonLeft}>
+                        <button className='bjButton' onClick={deal}> Deal </button>
+                    </div>
+                    <div className={classes.bjButtonMiddle}>
+                        <button className='bjButton' id='hitBtn' onClick={playerHit}>Hit</button>
+                    </div>
+                    <div className={classes.bjButtonRight}>
+                        <button className='bjButton' onClick={playerStay}>Stay</button>
+                    </div>
+
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-evenly', wiidth: '50%' }}>
-                    <div style={{ margin: '0 0 -10px' }}>Player Has &nbsp;</div>
+                    <div style={{ color: 'white', margin: '0 0 -10px' }}>Player Has &nbsp;</div>
                     <div className={classes.pScore}>{playerScore}</div>
                 </div>
 

@@ -53,7 +53,7 @@ export default function Portfolio() {
           onClick={handleToggle}
           className={classes.navButton}
         >
-          P_st Projects
+          Projects
         </Button>
         <Popper className={classes.popper} open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
           {({ TransitionProps, placement }) => (

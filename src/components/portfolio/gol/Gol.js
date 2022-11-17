@@ -9,19 +9,21 @@ export default function Gol() {
     const classes = useStyles()
 
     return (
-        <div className={classes.contentWrapper}>
-            <div className={classes.header}>
+        <div className={classes.root}>
+            <div className={classes.contentWrapper}>
+                <div className={classes.header}>
+                    <br />
+                    <h2>A Custom Rendition of...</h2>
+
+                </div>
+
+                <Game style={{ maxWidth: '1024px' }} />
+                <div className={classes.flexRow}>
+                    <Link className={classes.link} to='/'>Find this app on GitHub</Link>
+                </div>
                 <br />
-                <h2>A Custom Rendition of...</h2>
-
+                {/* <hr className={classes.horizLine} /> */}
             </div>
-
-            <Game style={{maxWidth: '1024px'}}/>
-            <div className={classes.flexRow}>
-                <Link className={classes.link} to='/'>Find this app on GitHub</Link>
-            </div>
-            <br />
-            {/* <hr className={classes.horizLine} /> */}
         </div>
     )
 }

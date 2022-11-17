@@ -1,32 +1,37 @@
 import React, { Component } from 'react';
 import Flippy, { FrontSide, BackSide } from 'react-flippy';
 import kwcImg from '../../static/slides/kwcsd/home-desktop.png'
-import './style.css'
+import { NavLink } from 'react-router-dom'
+import {FlippyStyle} from './FlippyStyle.js'
 
-const FlippyStyle = {
-  width: '200px',
-  height: '300px',
-  textAlign: 'center',
-  color: '#FFF',
-  fontFamily: 'sans-serif',
-  fontSize: '25px',
-  justifyContent: 'center'
-}
+const bullets = [
+  "Unique Styling",
+  "Fast Responsive Design",
+  "FaCustom API Integration",
+  "Better than IDX Web Listings",
+  "Custom Page Animations"
+]
 
 const DefaultCardContents = ({ children }) => (
   <React.Fragment>
-    <FrontSide className='frontSide'>
-      KWC <br />San Diego
+            <NavLink style={{ textDecoration: 'none', }} to='/portfolio/kwc-san-diego'>
+
+    <FrontSide className='front-side'>
+    <h3 className='card-title'>KWC San Diego</h3>
+      
       <img alt='screenshot of kwc san diego' style={{ width: '200px' }} src={kwcImg} />
 
     </FrontSide>
-    <BackSide className='backSide'>
-      <li>Fast Responsive Design</li>
-      <li>Custom API Integration</li>
-      <li>Better than IDX Web Listings</li>
-      <li>Custom Page Animations</li>
+    <BackSide className='back-side'>
+      {bullets.map((e) => (
+        <div className='bullet-row'>
+          <li className='cardBullet'></li>
+          <p className="cardBulletText">{e}</p>
+        </div>
+      ))}
     </BackSide>
-  </React.Fragment>);
+    </NavLink>
+  </React.Fragment >);
 
 const FlippyOnHover = ({ flipDirection = 'horizontal' }) => (
   <Flippy

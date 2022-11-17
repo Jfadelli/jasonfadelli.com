@@ -7,44 +7,44 @@
     align-self: center
 }
 
-.heart{
+.heart {
     display: none;
 }
 
-.diamond{
+.diamond {
     display: none;
 }
 
-.spade{
+.spade {
     display: none;
 }
 
-.club{
+.club {
     display: none;
 }
 
-.player-heart{
+.player-heart {
     display: none;
 }
 
-.player-diamond{
+.player-diamond {
     display: none;
 }
 
-.player-spade{
+.player-spade {
     display: none;
 }
 
-.player-club{
+.player-club {
     display: none;
 }
 
 #container {
     /*centers in the container*/
     text-align: center;
-  }
-  
-  div .circTxt {
+}
+
+div .circTxt {
     /*allows for centering*/
     display: inline-block;
     /*adjust as needed*/
@@ -52,11 +52,12 @@
     color: #111;
     font-size: 2em;
     z-index: -1000
-  }
+}
 
 .bjButton {
     z-index: 2000;
     background: none;
+    background-color: black;
     border: 2px solid;
     border-radius: 6px;
     line-height: 1;
@@ -64,15 +65,15 @@
     padding: .5em 2em;
     color: #FFBF00;
     font-size: 2em;
-  }
+
+}
 
 .bjButton:hover {
-  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
-  padding: .5em 2em;
-  background-color: green;
-  transition: .2s; 
-  font-size: 2.25em;
-  margin: 0 20px;
+    box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+    background-color: green;
+    transition: .3s;
+    color: black;
+
 }
 
 .bjCard {
@@ -90,31 +91,108 @@
     transform: rotate(-10deg)
 }
 
-.bjCard:nth-child(n+2){
+.bjCard:nth-child(n+2) {
     margin: 10px -40px 0 0;
     transform: rotate(-5deg)
 }
 
-.bjCard:nth-child(n+3){
+.bjCard:nth-child(n+3) {
     margin: 20px -40px 0 0;
     transform: rotate(0deg)
 }
 
-.bjCard:nth-child(n+4){
+.bjCard:nth-child(n+4) {
     margin: 30px -40px 0 0;
     transform: rotate(5deg)
-};
+}
 
-.bjCard:nth-child(n+4){
+;
+
+.bjCard:nth-child(n+4) {
     margin: 40x -40px 0 0;
     transform: rotate(10deg)
-};
+}
 
-.bjCard:nth-child(n+4){
+;
+
+.bjCard:nth-child(n+4) {
     margin: 50px -40px 0 0;
     transform: rotate(15deg)
 }
 
-#hitBtn {
-    
+
+.shimmer {
+    font-family: "Lato";
+    font-weight: 300;
+    font-size: 3em;
+    margin: 0 auto;
+    padding: 0 140px 0 0;
+    display: inline;
+    margin-bottom: 0;
+}
+
+.shimmer {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.1);
+    background: -webkit-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
+    background: -moz-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
+    background: gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
+    -webkit-background-size: 125px 100%;
+    -moz-background-size: 125px 100%;
+    background-size: 125px 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-animation-name: shimmer;
+    -moz-animation-name: shimmer;
+    animation-name: shimmer;
+    -webkit-animation-duration: 2s;
+    -moz-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-color: #222;
+}
+
+@-moz-keyframes shimmer {
+    0% {
+        background-position: top left;
+    }
+
+    100% {
+        background-position: top right;
+    }
+}
+
+@-webkit-keyframes shimmer {
+    0% {
+        background-position: top left;
+    }
+
+    100% {
+        background-position: top right;
+    }
+}
+
+@-o-keyframes shimmer {
+    0% {
+        background-position: top left;
+    }
+
+    100% {
+        background-position: top right;
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: top left;
+    }
+
+    100% {
+        background-position: top right;
+    }
 }

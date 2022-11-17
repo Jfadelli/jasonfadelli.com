@@ -9,17 +9,18 @@ export const useStyles = makeStyles(() => ({
         minHeight: '100%',
         left: '0',
         right: '0',
-        // backgroundImage: 'url(./static/bg2.jpg)',
-        // backgroundSize: 'contain',
     },
 
     landing: {
+        // position: 'absolute',
+        // top: 50,
+        // left: 0,
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: 'black',
         width: '100vw',
-        height: '100vh',
+        height: '95vh',
         // overflow: 'hidden',
         zIndex: '1000',
         visibility: 'visible',
@@ -31,7 +32,7 @@ export const useStyles = makeStyles(() => ({
         // opacity: '0',
         // transition: 'visibility 0s 4s, opacity 2s linear',
         backroundColor: 'red'
-        
+
     },
     enterButton: {
         zIndex: '2000',
@@ -71,21 +72,24 @@ export const useStyles = makeStyles(() => ({
         flexDirection: 'column',
         justifyContent: 'center',
         fontSize: '2rem',
-        margin: '1rem 0 '
+        margin: '1rem 0 ',
     },
 
     // content 
     contentWrapper: {
-
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
+        width: '900px',
         color: colors.dark,
+        // backgroundColor:'white',
+        marginTop: '25px',
         fontSize: '1rem',
+        borderRadius: '6px',
         '& h1': {
             fontSize: '4rem',
             padding: '0',
-            margin: '5px 0 3vh 0',
+            margin: '5px 0 1vh 0',
             textAlign: 'center',
             width: 'auto',
         },
@@ -102,8 +106,11 @@ export const useStyles = makeStyles(() => ({
             fontSize: '1.5rem',
             fontWeight: '400',
             textAlign: 'center',
-            margin: '1vh 0 0vh 0',
-            padding: '0'
+            margin: '1vh 5% 0vh 5%',
+            padding: '0',
+            color: 'black',
+            textAlign: 'center',
+            textDecoration: 'none',
         },
         '&h4': {
             fontSize: '1 rem',
@@ -111,9 +118,88 @@ export const useStyles = makeStyles(() => ({
             margin: '0'
         },
         '& p': {
-            // margin: '1rem 0 .5rem'
+            display: 'flex',
+            justifyContent: 'center',
+            textAlign: 'center',
+            fontSize: '1.5rem',
+            maxWidth: '700px'
         }
+    },
 
+    headerBody: {
+        display: 'flex',
+        justifyContent: 'center',
+    },
+
+    kwcCarousel: {
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'center',
+    },
+
+    cardContainer: {
+        flexWrap: 'wrap',
+        margin: '4rem 0',
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-evenly',
+        width: '700px',
+        height: 'auto',
+        gap:'20px 10px'
+    },
+
+    cardWrapper: {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        '& .bullet-row':{
+            display: "flex",
+            flexDirection: "row",
+            alignItems:"center",
+            justifyContent: "flex-start",
+            width: '175px',
+            margin: '-10px 0'
+        },
+        '& .front-side':{
+            backgroundColor: '#5d6b83',
+            borderRadius: '6px',
+            display: 'flex',
+            alignItems: 'center',
+            flexDirection: 'column',
+            justifyContent: 'space-around',
+            boxShadow: '8px 8px 16px 0 rgba(0, 0, 0, 0.5)',
+            textDecoration: 'none !important',
+        },
+
+        '& .back-side': {
+            backgroundColor: '#2b2d42',
+            borderRadius: '6px',
+            display: 'flex',
+            width: '200px',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            boxShadow: '8px 8px 16px 0 rgba(0, 0, 0, 0.5)'
+        },
+
+        '& .card-title' :{
+            textDecoration: 'none !important',
+            color: 'white',
+            fontSize:'18px'
+        },
+
+        '& .cardBullet': {
+            // backgroundColor: 'green', 
+            color: 'white',
+            textDecoration: 'none',
+        },
+
+        '& .cardBulletText': {
+            display:'inline',
+            textAlign:'start',
+            fontSize: "14px !important",
+            // backgroundColor: 'red', 
+            color: 'white',
+        },
     },
 
     content: {
@@ -121,14 +207,37 @@ export const useStyles = makeStyles(() => ({
         display: 'flex',
         flexDirection: 'column',
         alignContent: 'center',
-        justifyCntent: 'center',
+        justifyContent: 'center',
         alignItems: 'center',
         width: '100vw',
+        // backgroundColor:'white',
         maxWidth: '1024px',
         '& p': {
             margin: '1rem 0 .5rem'
         },
-        // backgroundColor:'lightgreen'
+    },
+
+    kwcAboutContent: {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        textAlign: 'center',
+        width: '90%',
+
+        '&p': {
+            width: '100%',
+        }
+
+    },
+
+    bioContent: {
+        display: 'flex',
+        flexDirection: 'column',
+        '& div': {
+            margin: '12px',
+
+        }
     },
 
     gallery: {
@@ -137,6 +246,10 @@ export const useStyles = makeStyles(() => ({
         flexDirection: 'column',
         flexBasis: '375px',
         maxWidth: '1024px',
+    },
+    home: {
+        backgroundColor: 'white',
+        borderRadius: '16px'
     },
 
     link: {
@@ -251,7 +364,7 @@ export const useStyles = makeStyles(() => ({
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: colors.bg,
-        height: '5vh',
+        height: '40px',
         marign: '0 0 1vh 0',
         position: 'relative',
         zIndex: ' 500',
@@ -323,7 +436,7 @@ export const useStyles = makeStyles(() => ({
             backgroundColor: colors.main,
             border: '1px solid ' + colors.dark,
             padding: '10px',
-
+            color: 'white',
         }
 
     },
@@ -382,9 +495,10 @@ export const useStyles = makeStyles(() => ({
         flexDirection: 'column',
         height: '600px',
         width: '1024px',
-        backgroundImage: 'url(http://api.thumbr.it/whitenoise-361x370.png?background=004A00A&noise=5c5554&density=13&opacity=33)',
+        // backgroundImage: 'url(http://api.thumbr.it/whitenoise-361x370.png?background=004A00A&noise=5c5554&density=13&opacity=33)',
         borderRadius: '20px',
-        border: '6px solid #301708'
+        border: '6px solid #301708',
+        backgroundColor: 'darkgreen'
 
     },
     dealerArea: {
@@ -420,6 +534,7 @@ export const useStyles = makeStyles(() => ({
         borderRadius: '6px',
         height: '30px',
         width: '30px',
+
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: 'lightyellow',
@@ -427,8 +542,20 @@ export const useStyles = makeStyles(() => ({
     },
     bjControls: {
         display: 'flex',
-        width: '50%',
+        width: '400px',
         flexDirection: 'row',
         justifyContent: 'space-evenly',
+    },
+    bjButtonLeft: {
+        position: 'relative',
+        left: '10px'
+    },
+    bjButtonMiddle: {
+        position: 'relative',
+
+    },
+    bjButtonRight: {
+        position: 'relative',
+        right: '10px'
     }
-}));
+}))

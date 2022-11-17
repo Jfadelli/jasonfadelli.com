@@ -1,45 +1,36 @@
 import React, { Component } from 'react';
 import Flippy, { FrontSide, BackSide } from 'react-flippy';
-import bjImg from '../../static/slides/blackjack/blackjack.png'
-import { NavLink } from 'react-router-dom'
+import bjImg from '../../static/slides/krk_wine_sd/krk_wine_ss.png'
 import {FlippyStyle} from './FlippyStyle.js'
 
-// const FlippyStyle = {
-//     width: '200px',
-//     height: '300px',
-//     textAlign: 'center',
-//     color: '#FFF',
-//     fontFamily: 'sans-serif',
-//     fontSize: '25px',
-//     justifyContent: 'center'
-// }
 
 const bullets = [
-    "Playable React JS Blackjack",
-    "Custom Playing Card Models",
-    "Fast Responsive Gameplay",
+    "Custom E-Commerce Site",
+    "Fully Dynamic",
+    "User Friendly CMS Interface",
     "Unique Styling",
+
 ]
 
 const DefaultCardContents = ({ children }) => (
     <React.Fragment>
-        <NavLink  style={{textDecoration:'none',}}to='/portfolio/blackjack'>
+        <a style={{ "text-decoration": "none" }} href='https://krk-wine-sanity-stripe.vercel.app/'>
             <FrontSide className='front-side'>
-                <h3 className='card-title'>Blackjack JS</h3>
-                <img alt='screenshot of blackjack js' style={{ width: '200px' }} src={bjImg} />
+                <h3 className='card-title'>KRK Wine Shop</h3>
+                <img alt='screenshot of KRK Wine SD' style={{ width: '200px' }} src={bjImg} />
 
             </FrontSide>
 
             <BackSide className='back-side'>
-            {bullets.map((e) => (
-                <div className='bullet-row'>
-                    <li className='cardBullet'></li>
-                    <p className="cardBulletText">{e}</p>
-                </div>
-            ))}
+                {bullets.map((e) => (
+                    <div className='bullet-row'>
+                        <li className='cardBullet'></li>
+                        <p className="cardBulletText">{e}</p>
+                    </div>
+                ))}
             </BackSide>
-        </NavLink>
-    </React.Fragment>);
+        </a >
+    </React.Fragment >);
 
 const FlippyOnHover = ({ flipDirection = 'horizontal' }) => (
     <Flippy
@@ -53,7 +44,8 @@ const FlippyOnHover = ({ flipDirection = 'horizontal' }) => (
     </Flippy>
 );
 
-class BjCard extends Component {
+class eCommerceCard extends Component {
+
     constructor(props) {
         super(props);
         this.state = {
@@ -78,4 +70,4 @@ class BjCard extends Component {
     }
 }
 
-export default BjCard;
+export default eCommerceCard;

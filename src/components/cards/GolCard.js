@@ -1,32 +1,36 @@
 import React, { Component } from 'react';
 import Flippy, { FrontSide, BackSide } from 'react-flippy';
 import golImg from '../../static/slides/gol/gol-home.png'
-import './style.css'
+import { NavLink } from 'react-router-dom'
+import {FlippyStyle} from './FlippyStyle.js'
 
-
-const FlippyStyle = {
-    width: '200px',
-    height: '300px',
-    textAlign: 'center',
-    color: '#FFF',
-    fontFamily: 'sans-serif',
-    fontSize: '25px',
-    justifyContent: 'center'
-}
+const bullets = [
+    "Custom Page Animations",
+    "Custom React Application",
+    "Deep Logical Operators",
+    "0 Player Gameplay",
+    "Unique Styling"
+]
 
 const DefaultCardContents = ({ children }) => (
     <React.Fragment>
-        <FrontSide className='frontSide'>
-            Conway's Game of Life
-            <img alt='screenshot of kwc san diego' style={{ width: '200px' }} src={golImg} />
+        <NavLink style={{ textDecoration: 'none', }} to='/portfolio/game-of-life'>
+            <FrontSide className='front-side'>
+                <h3 className='card-title'>Conway's <br/> Game of Life</h3>
 
-        </FrontSide>
-        <BackSide className='backSide'>
-            <li>Custom React Application</li>
-            <li>Deep Logical Operators</li>
-            <li>0 Player Gameplay</li>
-            <li>Unique Styling</li>
-        </BackSide>
+                <img alt='screenshot of kwc san diego' style={{ width: '200px' }} src={golImg} />
+
+            </FrontSide>
+            <BackSide className='back-side'>
+                {bullets.map((e) => (
+                    <div className='bullet-row'>
+                        <li className='cardBullet'></li>
+                        <p className="cardBulletText">{e}</p>
+                    </div>
+                ))}
+
+            </BackSide>
+        </NavLink>
     </React.Fragment>);
 
 const FlippyOnHover = ({ flipDirection = 'horizontal' }) => (
@@ -37,7 +41,7 @@ const FlippyOnHover = ({ flipDirection = 'horizontal' }) => (
     >
         <DefaultCardContents>
             I flip {flipDirection}ly on hover
-      </DefaultCardContents>
+        </DefaultCardContents>
 
     </Flippy>
 );

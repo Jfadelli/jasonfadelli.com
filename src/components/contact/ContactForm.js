@@ -10,6 +10,7 @@ import mail from '../../static/mail.png'
 
 import contactUsSchema from '../validation/contactUsSchema'
 import { useStyles } from '../../style/style'
+import { teal } from '@material-ui/core/colors'
 
 const initialValues = {
     name: '',
@@ -97,64 +98,68 @@ export default function Contact() {
 
     const shadowBox = {
         display: 'flex',
-        justifyContent:'center',
+        justifyContent: 'center',
         width: '420px',
-        boxShadow: 'rgba(0, 0, 0, 0.35) 5px 10px 15px',
+        boxShadow: 'rgba(0, 0, 0, 0.45) 5px 10px 15px',
         borderRadius: '6px',
         padding: '10px',
-    
+        backgroundColor: 'white',
+
     }
     return (
-        <div className={classes.contentWrapper}>
-            <div className={classes.flexCol} >
-                <div style={{alignItems:'center'}} className={classes.flexRow}>
-                    <div style={shadowBox}>
-                        <form className={classes.contactUs} style={rowStyles.container(isHidden)} onSubmit={onSubmitHandler}>
-                            <label>Full Name</label>
-                            <input
-                                value={formValues.name}
-                                onChange={onInputChange}
-                                type='text'
-                                placeholder='  full name'
-                                name='name'
-                            />
+        <div className={classes.root}>
+            <div className={classes.contentWrapper}>
+                <div className={classes.flexCol} >
+                    <div style={{ alignItems: 'center' }} className={classes.flexRow}>
+                        <div style={shadowBox}>
+                            <form className={classes.contactUs} style={rowStyles.container(isHidden)} onSubmit={onSubmitHandler}>
+                                <label>Full Name</label>
+                                <input
+                                    value={formValues.name}
+                                    onChange={onInputChange}
+                                    type='text'
+                                    placeholder='  full name'
+                                    name='name'
+                                />
 
-                            <label>Email Address</label>
-                            <input
-                                value={formValues.email}
-                                onChange={onInputChange}
-                                type='email'
-                                placeholder='  email address'
-                                name='email'
-                            />
+                                <label>Email Address</label>
+                                <input
+                                    value={formValues.email}
+                                    onChange={onInputChange}
+                                    type='email'
+                                    placeholder='  email address'
+                                    name='email'
+                                />
 
-                            <label>Phone Number</label>
-                            <input
-                                value={formValues.phone}
-                                onChange={onInputChange}
-                                type='tel'
-                                placeholder='  phone'
-                                name='phone'
-                                maxLength='10'
-                            />
+                                <label>Phone Number</label>
+                                <input
+                                    value={formValues.phone}
+                                    onChange={onInputChange}
+                                    type='tel'
+                                    placeholder='  phone'
+                                    name='phone'
+                                    maxLength='10'
+                                />
 
-                            <label> Message</label>
-                            <textarea
-                                value={formValues.message}
-                                onChange={onInputChange}
-                                type='text'
-                                placeholder=' type your message here'
-                                name="message"
-                            />
-                            <div>{formErrors.email}</div>
-                            <div>{formErrors.phone}</div>
-                            <button disabled={disabled} onSubmit={onSubmitHandler}> Send</button>
-                        </form>
+                                <label> Message</label>
+                                <textarea
+                                    value={formValues.message}
+                                    onChange={onInputChange}
+                                    type='text'
+                                    placeholder=' type your message here'
+                                    name="message"
+                                />
+                                <div>{formErrors.email}</div>
+                                <div>{formErrors.phone}</div>
+                                <button disabled={disabled} onSubmit={onSubmitHandler}> Send</button>
+                            </form>
+                        </div>
+                        <img style={styles.container(isHidden)} className={classes.contactImg} alt="generic team working together" src={mail} />
                     </div>
-                    <img style={styles.container(isHidden)} className={classes.contactImg} alt="generic team working together" src={mail} />
                 </div>
             </div>
         </div>
+
     )
 }
 

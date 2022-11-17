@@ -9,15 +9,6 @@ import About from './navLinks/About.js'
 import Contact from './navLinks/Contact.js'
 import Home from './navLinks/HomeLink.js'
 
-// const url = window.location.href
-
-// const checkHome = ( url => {
-// 
-//   if (window.location.href === 'http://localhost:3000/'){
-//     console.log('true - url is =>',document.URL )
-// }
-// }, []);
-
 export default function Nav() {
   const isRow = useMediaQuery('(min-width: 769px)');
   const classes = useStyles();
