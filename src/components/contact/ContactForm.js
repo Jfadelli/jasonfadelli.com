@@ -118,7 +118,7 @@ export default function Contact() {
                                     value={formValues.name}
                                     onChange={onInputChange}
                                     type='text'
-                                    placeholder='  full name'
+                                    // placeholder='  full name'
                                     name='name'
                                 />
 
@@ -127,7 +127,7 @@ export default function Contact() {
                                     value={formValues.email}
                                     onChange={onInputChange}
                                     type='email'
-                                    placeholder='  email address'
+                                    // placeholder='  email address'
                                     name='email'
                                 />
 
@@ -136,7 +136,7 @@ export default function Contact() {
                                     value={formValues.phone}
                                     onChange={onInputChange}
                                     type='tel'
-                                    placeholder='  phone'
+                                    // placeholder='  phone'
                                     name='phone'
                                     maxLength='10'
                                 />
@@ -146,12 +146,13 @@ export default function Contact() {
                                     value={formValues.message}
                                     onChange={onInputChange}
                                     type='text'
-                                    placeholder=' type your message here'
+                                    placeholder=' Type your message here'
                                     name="message"
                                 />
-                                <div>{formErrors.email}</div>
-                                <div>{formErrors.phone}</div>
+
                                 <button disabled={disabled} onSubmit={onSubmitHandler}> Send</button>
+                                <div style={{color:'red'}}>{formErrors.email}</div>
+                                <div style={{color:'red'}}>{formErrors.phone}</div>
                             </form>
                         </div>
                         <img style={styles.container(isHidden)} className={classes.contactImg} alt="generic team working together" src={mail} />

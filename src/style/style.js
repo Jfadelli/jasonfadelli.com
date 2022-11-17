@@ -386,6 +386,7 @@ export const useStyles = makeStyles(() => ({
     contactUs: {
         alignSelf: 'center',
         display: 'flex',
+        height:'600px',
         flexDirection: 'column',
         textAlign: 'left',
         '& label': {
@@ -401,12 +402,12 @@ export const useStyles = makeStyles(() => ({
             height: '40px',
             width: '120px',
             color: colors.main,
-            backgroundColor: colors.alt,
+            backgroundColor: colors.contactColor1,
             border: '2px dotted ' + colors.main,
             borderRadius: '4px',
             '&:hover': {
-                color: colors.alt,
-                backgroundColor: colors.main,
+                color: colors.dark,
+                backgroundColor: colors.contactColor2,
                 border: '2px dotted ' + colors.dark,
                 cursor: 'pointer'
 
@@ -418,8 +419,8 @@ export const useStyles = makeStyles(() => ({
             outline: 'none',
             width: 'auto',
             height: '2.0rem',
-            border: '2px solid ' + colors.main,
-            borderRadius: '1px',
+            border: '1px solid ' + colors.main,
+            borderRadius: '4px',
             fontSize: '1.25rem',
             maxWidth: '400px',
             minWidth: '400px',
@@ -433,8 +434,9 @@ export const useStyles = makeStyles(() => ({
             minHeight: '6rem',
             lineHeight: '20px',
             fontSize: '1.5rem',
-            backgroundColor: colors.main,
+            backgroundColor: colors.alt,
             border: '1px solid ' + colors.dark,
+            borderRadius:'6px',
             padding: '10px',
             color: 'white',
         }

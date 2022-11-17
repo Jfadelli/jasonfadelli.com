@@ -166,6 +166,7 @@ return (
                 stepForward={this.stepForward}
                 playSpeed={this.playSpeed}
             />
+			<br/><br/><br/>
             <Grid
                 gridFull={this.state.gridFull}
                 rows={this.rows}
