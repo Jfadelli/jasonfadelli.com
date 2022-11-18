@@ -198,7 +198,7 @@ function Table() {
             var deg = 60 / txt.length,
                 origin = -27;
             txt.forEach((ea) => {
-                ea = `<p className='shimmer' style='font-size: 45px;height:${radius}px;position:absolute;transform:rotate(${origin}deg);transform-origin:0 100%'>${ea}</p>`;
+                ea = `<p className='shimmer' style='font-size: 45px;height:${radius}px;position:absolute;transform:rotate(${origin}deg);transform-origin:0 100%; z-index: 10'>${ea}</p>`;
                 classIndex.innerHTML += ea;
                 origin += deg;
             });
@@ -221,11 +221,12 @@ function Table() {
     return (
         <div>
             <Notifications options={{ top: '80%', timeout: '20000', animationDuration: '500' }} />
+
+            <div className={classes.bjTable}>
             <div className="" id='container'>
-                <div className="circTxt" id="test">
+                <div className="circTxt">
                 </div>
             </div>
-            <div className={classes.bjTable}>
 
                 {/* Dealer Area */}
                 <div className={classes.dealerArea}>

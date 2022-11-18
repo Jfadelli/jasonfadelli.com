@@ -32,7 +32,7 @@ function App() {
   const classes = useStyles();
   return (
     <div className={classes.app}>
-      <Nav />
+     
 
       <Route render={({ location }) => (
         <TransitionGroup>
@@ -41,7 +41,7 @@ function App() {
             timeout={500}
             classNames='fade'>
             <Switch location={location}>
-                  <Route exact path='/' component={Landing} />
+                  <Route exact path='/' component={Home} />
       
               {/* Home */}
               <Route path='/home' component={Home} />

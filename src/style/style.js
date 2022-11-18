@@ -24,7 +24,7 @@ export const useStyles = makeStyles(() => ({
         // overflow: 'hidden',
         zIndex: '1000',
         visibility: 'visible',
-        opacity: '1',
+        opacity: '.2',
         transition: 'opacity 2s linear',
     },
     landingHidden: {
@@ -145,22 +145,22 @@ export const useStyles = makeStyles(() => ({
         justifyContent: 'space-evenly',
         width: '700px',
         height: 'auto',
-        gap:'20px 10px'
+        gap: '20px 10px'
     },
 
     cardWrapper: {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        '& .bullet-row':{
+        '& .bullet-row': {
             display: "flex",
             flexDirection: "row",
-            alignItems:"center",
+            alignItems: "center",
             justifyContent: "flex-start",
             width: '175px',
             margin: '-10px 0'
         },
-        '& .front-side':{
+        '& .front-side': {
             backgroundColor: '#5d6b83',
             borderRadius: '6px',
             display: 'flex',
@@ -181,10 +181,10 @@ export const useStyles = makeStyles(() => ({
             boxShadow: '8px 8px 16px 0 rgba(0, 0, 0, 0.5)'
         },
 
-        '& .card-title' :{
+        '& .card-title': {
             textDecoration: 'none !important',
             color: 'white',
-            fontSize:'18px'
+            fontSize: '18px'
         },
 
         '& .cardBullet': {
@@ -194,8 +194,8 @@ export const useStyles = makeStyles(() => ({
         },
 
         '& .cardBulletText': {
-            display:'inline',
-            textAlign:'start',
+            display: 'inline',
+            textAlign: 'start',
             fontSize: "14px !important",
             // backgroundColor: 'red', 
             color: 'white',
@@ -224,11 +224,9 @@ export const useStyles = makeStyles(() => ({
         alignItems: 'center',
         textAlign: 'center',
         width: '90%',
-
         '&p': {
             width: '100%',
         }
-
     },
 
     bioContent: {
@@ -236,8 +234,69 @@ export const useStyles = makeStyles(() => ({
         flexDirection: 'column',
         '& div': {
             margin: '12px',
-
+        },
+        '& .bio-card': {
+            // backgroundColor: 'teal',
+            border: '1px solid'+colors.dark, 
+            borderRadius: '6px',
+            boxShadow: 'rgba(0, 0, 0, 0.35) 0px 10px 5px',
+            display: 'flex',
+            flexDirection: 'column',
+        },
+        '& .bio-card-h-line-1': {
+            margin: '0 auto 0vh auto',
+            border: '1px dotted ' + colors.dark,
+            borderRadius: '90px',
+            maxWidth: '1024px',
+            width: '92%'
+        },
+        '& .bio-card-h-line-2': {
+            margin: '5px auto -10px auto',
+            maxWidth: '1024px',
+            width: '92%',
+            backgroundColor: colors.dark,
+            maxHeight: '1024px',
+            height: '1px',
+        },
+        '& .bio-company-name': {
+            fontSize: '40px'
+        },
+        '& .bio-card-left-container': {
+            width: '250px',
+            padding: 'none'
+        },
+        '& .bio-card-right-container': {
+            display: 'flex',
+            flexDirection:'column',
+            justifyContent:'flex-start',
+            minHeight: '150px'
+        },
+        '& .bio-card-content-container': {
+            display: 'flex',
+            flexDirection: 'row',
+            alignItems:'center'
+        },
+        '& .bio-card-role': {
+            fontSize: '18px',
+            lineHeight:'1.5rem'
+        },
+        '& .bio-card-timeframe': {
+            fontSize: '16px',
+            lineHeight:'1.5rem'
+        },
+        '& p':{
+            textAlign: 'justify',
+            padding:'0 14px',
+            fontSize:'16px'
+        },
+        '& vl':{
+            margin: '0 auto 0vh auto',
+            backgroundColor: colors.dark,
+            maxHeight: '1024px',
+            height: '120px',
+            width:'1px'
         }
+
     },
 
     gallery: {
@@ -357,11 +416,14 @@ export const useStyles = makeStyles(() => ({
         padding: '.25vh'
     },
 
+    spacedDiv:{
+        width:'750px',
+
+    },
     navBar: {
         display: 'flex',
         flexWrap: 'none',
-        flexDirection: 'row',
-        justifyContent: 'center',
+        flexDirection: 'column',
         alignItems: 'center',
         backgroundColor: colors.bg,
         height: '40px',
@@ -369,6 +431,7 @@ export const useStyles = makeStyles(() => ({
         position: 'relative',
         zIndex: ' 500',
         width: '100%',
+        minWidth:'600px',
         boxShadow: 'rgba(0, 0, 0, 0.35) 0px 10px 5px',
     },
     navToolbar: {
@@ -376,9 +439,20 @@ export const useStyles = makeStyles(() => ({
         flexDirection: 'row',
         width: '50%',
         height: '100%',
-
+        gap:'20px',
         justifyContent: 'space-evenly',
     },
+
+    menuList:{
+        zIndex:'200',
+        backgroundColor:'pink'
+    },
+
+    navButton:{
+        fontSize:'100px',
+        backgroundColor:'pink'
+    },
+    
 
     // nav buttons and links are in navbar '../components/navbar/style.js'
 
@@ -386,7 +460,7 @@ export const useStyles = makeStyles(() => ({
     contactUs: {
         alignSelf: 'center',
         display: 'flex',
-        height:'600px',
+        height: '600px',
         flexDirection: 'column',
         textAlign: 'left',
         '& label': {
@@ -436,7 +510,7 @@ export const useStyles = makeStyles(() => ({
             fontSize: '1.5rem',
             backgroundColor: colors.alt,
             border: '1px solid ' + colors.dark,
-            borderRadius:'6px',
+            borderRadius: '6px',
             padding: '10px',
             color: 'white',
         }
@@ -500,9 +574,13 @@ export const useStyles = makeStyles(() => ({
         // backgroundImage: 'url(http://api.thumbr.it/whitenoise-361x370.png?background=004A00A&noise=5c5554&density=13&opacity=33)',
         borderRadius: '20px',
         border: '6px solid #301708',
-        backgroundColor: 'darkgreen'
-
+        backgroundColor: 'darkgreen',
+        zIndex:'100',
+        '& .circTxt':{
+            zIndex:'110',
+        },
     },
+
     dealerArea: {
         height: '200px',
         width: '600px',
