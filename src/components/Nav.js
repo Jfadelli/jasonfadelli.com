@@ -15,7 +15,6 @@ export default function Nav() {
   // const [isHome, setIsHome ] = useState()
 
   return (
-  <div className={classes.spacedDiv}>
     <div className={classes.navBar} style={styles.container(isRow)}>
       <Toolbar className={classes.navToolbar} style={styles.container(isRow)}>
         <Home />
@@ -24,7 +23,6 @@ export default function Nav() {
         <Contact />
       </Toolbar>
     </div>
-  </div>
   );
 }
 

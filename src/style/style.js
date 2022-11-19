@@ -237,7 +237,7 @@ export const useStyles = makeStyles(() => ({
         },
         '& .bio-card': {
             // backgroundColor: 'teal',
-            border: '1px solid'+colors.dark, 
+            border: '1px solid' + colors.dark,
             borderRadius: '6px',
             boxShadow: 'rgba(0, 0, 0, 0.35) 0px 10px 5px',
             display: 'flex',
@@ -267,34 +267,34 @@ export const useStyles = makeStyles(() => ({
         },
         '& .bio-card-right-container': {
             display: 'flex',
-            flexDirection:'column',
-            justifyContent:'flex-start',
+            flexDirection: 'column',
+            justifyContent: 'flex-start',
             minHeight: '150px'
         },
         '& .bio-card-content-container': {
             display: 'flex',
             flexDirection: 'row',
-            alignItems:'center'
+            alignItems: 'center'
         },
         '& .bio-card-role': {
             fontSize: '18px',
-            lineHeight:'1.5rem'
+            lineHeight: '1.5rem'
         },
         '& .bio-card-timeframe': {
             fontSize: '16px',
-            lineHeight:'1.5rem'
+            lineHeight: '1.5rem'
         },
-        '& p':{
+        '& p': {
             textAlign: 'justify',
-            padding:'0 14px',
-            fontSize:'16px'
+            padding: '0 14px',
+            fontSize: '16px'
         },
-        '& vl':{
+        '& vl': {
             margin: '0 auto 0vh auto',
             backgroundColor: colors.dark,
             maxHeight: '1024px',
             height: '120px',
-            width:'1px'
+            width: '1px'
         }
 
     },
@@ -416,14 +416,15 @@ export const useStyles = makeStyles(() => ({
         padding: '.25vh'
     },
 
-    spacedDiv:{
-        width:'750px',
+    spacedDiv: {
+        width: '800px',
 
     },
     navBar: {
         display: 'flex',
         flexWrap: 'none',
         flexDirection: 'column',
+        justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: colors.bg,
         height: '40px',
@@ -431,7 +432,7 @@ export const useStyles = makeStyles(() => ({
         position: 'relative',
         zIndex: ' 500',
         width: '100%',
-        minWidth:'600px',
+        minWidth: '600px',
         boxShadow: 'rgba(0, 0, 0, 0.35) 0px 10px 5px',
     },
     navToolbar: {
@@ -439,20 +440,23 @@ export const useStyles = makeStyles(() => ({
         flexDirection: 'row',
         width: '50%',
         height: '100%',
-        gap:'20px',
+        gap: '20px',
         justifyContent: 'space-evenly',
     },
+    navRoot: {
 
-    menuList:{
-        zIndex:'200',
-        backgroundColor:'pink'
     },
 
-    navButton:{
-        fontSize:'100px',
-        backgroundColor:'pink'
+    menuList: {
+        zIndex: '200',
+
     },
-    
+
+    navButton: {
+        fontSize: '100px',
+
+    },
+
 
     // nav buttons and links are in navbar '../components/navbar/style.js'
 
@@ -561,7 +565,7 @@ export const useStyles = makeStyles(() => ({
         justifyContent: 'center'
     },
 
-    bjTable: {
+    bjTable: {  
         borderBottomLeftRadius: '512px',  /* 100px of height + 2px of border */
         borderBottomRightRadius: '512px', /* 100px of height + 2px of border */
         margin: '1em 0',
@@ -569,15 +573,18 @@ export const useStyles = makeStyles(() => ({
         justifyContent: 'space-between',
         alignItems: 'center',
         flexDirection: 'column',
-        height: '600px',
+        height: '700px',
         width: '1024px',
         // backgroundImage: 'url(http://api.thumbr.it/whitenoise-361x370.png?background=004A00A&noise=5c5554&density=13&opacity=33)',
         borderRadius: '20px',
-        border: '6px solid #301708',
+        border: '6px solid #7a5c00',
         backgroundColor: 'darkgreen',
-        zIndex:'100',
-        '& .circTxt':{
-            zIndex:'110',
+        zIndex: '100',
+        '& .circTxt': {
+            position: 'relative',
+            zIndex: '10',
+            color: 'black',
+
         },
     },
 
@@ -589,7 +596,8 @@ export const useStyles = makeStyles(() => ({
         justifyContent: 'center',
         border: '3px solid #FFBF00',
         borderTop: '0px',
-        borderRadius: '0 0 300px 300px'
+        borderRadius: '0 0 300px 300px',
+
     },
 
     dealer: {
@@ -621,6 +629,7 @@ export const useStyles = makeStyles(() => ({
         color: 'red'
     },
     bjControls: {
+        // margin:'20px',
         display: 'flex',
         width: '400px',
         flexDirection: 'row',
@@ -637,5 +646,49 @@ export const useStyles = makeStyles(() => ({
     bjButtonRight: {
         position: 'relative',
         right: '10px'
+    },
+
+
+    bjExitButton: {
+        display:'flex',
+        opacity:'.4',
+        justifyContent:'center',
+        alignItems:'center',
+        textDecoration:'none',
+        zIndex: '2000',
+        backgroundColor: 'black',
+        border: '2px solid',
+        borderRadius: '6px',
+        lineHeight: '1',
+        margin: '10px 20px 20px 20px',
+        height: '50px',
+        width: '150px',
+        color: '#FFBF00',
+        fontSize: '2em',
+        '&:hover': {
+            boxShadow: '0 0.5em 0.5em -0.4em var(--hover)',
+            transition: '.3s',
+            opacity:'1'
+
+        }
+    },
+    bjButton: {
+        zIndex: '2000',
+        background: 'none',
+        backgroundColor: 'black',
+        border: '2px solid',
+        borderRadius: '6px',
+        lineHeight: '1',
+        margin: '0 20px 20px',
+        height: '70px',
+        width: '150px',
+        color: '#FFBF00',
+        fontSize: '2em',
+        '&:hover': {
+            boxShadow: '0 0.5em 0.5em -0.4em var(--hover)',
+            backgroundColor: 'green',
+            transition: '.3s',
+            color: 'black',
+        }
     }
 }))

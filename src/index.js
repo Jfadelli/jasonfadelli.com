@@ -3,15 +3,22 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route } from 'react-router-dom'
+import ScrollToTop from './ScrollToTop'
 import './reset.css'
 import './bg.css'
 
+
+
 ReactDOM.render(
-  <BrowserRouter>
-  <div class="bg">
-    <Route path="/" component={App} />
-    </div>
-  </BrowserRouter>,
+
+    <BrowserRouter>
+      <ScrollToTop>
+      <div class="bg">
+        <Route path="/" component={App} />
+      </div>
+      </ScrollToTop>
+    </BrowserRouter>
+,
   document.getElementById('root')
 );
 

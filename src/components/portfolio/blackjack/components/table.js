@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Notifications, { notify } from 'react-notify-toast';
 import { useStyles } from '../../../../style/style'
 import { playerChangeSuite, dealerChangeSuite } from './suiteHandler'
+import { NavLink } from 'react-router-dom';
 
 import PlayerHand from './playerHand'
 import DealerHand from './dealerHand'
@@ -191,18 +192,18 @@ function Table() {
 
 
     useEffect(() => {
-        circularText("BLACKJACK", 500, 0);
-        function circularText(txt, radius, classIndex) {
-            txt = txt.split("");
-            classIndex = document.getElementsByClassName("circTxt")[classIndex];
-            var deg = 60 / txt.length,
-                origin = -27;
-            txt.forEach((ea) => {
-                ea = `<p className='shimmer' style='font-size: 45px;height:${radius}px;position:absolute;transform:rotate(${origin}deg);transform-origin:0 100%; z-index: 10'>${ea}</p>`;
-                classIndex.innerHTML += ea;
-                origin += deg;
-            });
-        }
+        // circularText("BLACKJACK", 500, 0);
+        // function circularText(txt, radius, classIndex) {
+        //     txt = txt.split("");
+        //     classIndex = document.getElementsByClassName("circTxt")[classIndex];
+        //     var deg = 60 / txt.length,
+        //         origin = -27;
+        //     txt.forEach((ea) => {
+        //         ea = `<p style='font-size: 45px;height:${radius}px;position:absolute;transform:rotate(${origin}deg);transform-origin:0 100%;'>${ea}</p>`;
+        //         classIndex.innerHTML += ea;
+        //         origin += deg;
+        //     });
+        // }
         if (playerHandState.length > 2) {
             playerChangeSuite({ playerHandState })
         }
@@ -223,10 +224,11 @@ function Table() {
             <Notifications options={{ top: '80%', timeout: '20000', animationDuration: '500' }} />
 
             <div className={classes.bjTable}>
-            <div className="" id='container'>
-                <div className="circTxt">
+                <div className="" id='container'>
+                    <div className={classes.header} style={{margin:'0 0 -10px 0',position:'relative',fontSize: '40px',fontVariant:'small-caps'}}>
+                        blackjack.js
+                    </div>
                 </div>
-            </div>
 
                 {/* Dealer Area */}
                 <div className={classes.dealerArea}>
@@ -236,17 +238,21 @@ function Table() {
                     <div style={{ color: 'white', margin: '0 0 -10px' }}>Dealer Has &nbsp;</div>
                     <div className={classes.pScore}>{dealerScore}</div>
                 </div>
+
+                <div className={classes.bjControls}>
+                    <NavLink to="/home" className={classes.bjExitButton}> Exit </NavLink>
+                </div>
+
                 <div className={classes.bjControls}>
                     <div className={classes.bjButtonLeft}>
-                        <button className='bjButton' onClick={deal}> Deal </button>
+                        <button className={classes.bjButton} onClick={deal}> Deal </button>
                     </div>
                     <div className={classes.bjButtonMiddle}>
-                        <button className='bjButton' id='hitBtn' onClick={playerHit}>Hit</button>
+                        <button className={classes.bjButton} onClick={playerHit}>Hit</button>
                     </div>
                     <div className={classes.bjButtonRight}>
-                        <button className='bjButton' onClick={playerStay}>Stay</button>
+                        <button className={classes.bjButton} onClick={playerStay}>Stay</button>
                     </div>
-
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-evenly', wiidth: '50%' }}>
                     <div style={{ color: 'white', margin: '0 0 -10px' }}>Player Has &nbsp;</div>
@@ -259,9 +265,12 @@ function Table() {
                     <div className={classes.player}>
                         <PlayerHand playerHandState={playerHandState} />
                     </div>
+
                 </div>
 
             </div>
+
+
         </div >
     )
 }

@@ -2,12 +2,14 @@ import React from 'react'
 import { useStyles } from '../../style/style'
 import SocialMedia from '../socialMedia/socialMedia'
 import { LifeStory } from './life-story'
+import Nav from '../Nav'
 
 export default function PeronalLife() {
     const classes = useStyles()
 
     return (
         <div className={classes.root}>
+            <Nav />
             <div className={classes.contentWrapper}>
                 <div className={classes.content}>
                     <div className={classes.flexCol}>

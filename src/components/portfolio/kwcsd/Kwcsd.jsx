@@ -3,14 +3,16 @@ import { useStyles } from '../../../style/style'
 import './accordian.css'
 // import '@fortawesome/free-solid-svg-icons'
 import KwcCarousel from './KwcCarousel'
+import Nav from '../../Nav'
 
 export default function Kwcsd() {
     const classes = useStyles()
 
     return (
         <div className={classes.root}>
+            <Nav />
             <div className={classes.contentWrapper}>
-                <div className={classes.home}>
+                {/* <div className={classes.home}> */}
                     <div className={classes.content}>
                         <div className={classes.flexCol} >
                             <div className={classes.kwcAboutContent}>
@@ -60,12 +62,12 @@ export default function Kwcsd() {
                     </div>
                     <div className={classes.content}>
 
-                        <a className={classes.link} href='https://www.kwcsandiego.com'>KWC San Diego</a>
+                        <a className={classes.link} href='https://www.kwcsandiego.com'>Visit KWC San Diego</a>
                         <br/><br/>
 
 
                     </div>
-                </div>
+                {/* </div> */}
             </div>
         </div >
     )

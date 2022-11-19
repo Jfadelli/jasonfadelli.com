@@ -2,6 +2,8 @@ import React from 'react'
 import { useStyles } from '../../style/style'
 import SocialMedia from '../socialMedia/socialMedia'
 import { workExperience } from './work-experience'
+import Nav from '../Nav'
+
 
 export default function WorkExperience() {
     const classes = useStyles()
@@ -12,6 +14,7 @@ export default function WorkExperience() {
 
     return (
         <div className={classes.root}>
+            <Nav />
             <div className={classes.contentWrapper}>
                 <div className={classes.content}>
                     <div className={classes.flexCol}>

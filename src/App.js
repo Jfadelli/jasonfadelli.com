@@ -9,14 +9,15 @@ import {
 } from 'react-transition-group';
 
 // Components
-import Landing from './components/Landing'
-import Nav from './components/Nav'
+// import Landing from './components/Landing'
+// import Nav from './components/Nav'
 import Home from './components/Home'
 
 // Portfolio
 import Kwcsd from './components/portfolio/kwcsd/Kwcsd'
 import Gol from './components/portfolio/gol/Gol'
 import Blackjack from './components/portfolio/blackjack/Blackjack'
+import KrkWine from './components/portfolio/ecommerce/krkWine';
 
 // Contact
 import Contact from './components/contact/ContactForm'
@@ -48,8 +49,10 @@ function App() {
 
               {/* about */}
               <Route path='/portfolio/kwc-san-diego' component={Kwcsd} />
+              <Route path='/portfolio/krk-wine' component={KrkWine} />
               <Route path='/portfolio/game-of-life' component={Gol} />
               <Route path='/portfolio/blackjack' component={Blackjack} />
+
 
               {/* contact */}
               <Route path='/contact/contact-form' component={Contact} />

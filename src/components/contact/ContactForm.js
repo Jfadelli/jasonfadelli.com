@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 // import { useHistory } from 'react-router-dom'
 import axios from 'axios'
 import * as Yup from 'yup'
+import Nav from '../Nav'
 
 
 import { useMediaQuery } from '../../hooks/mediaQuery'
@@ -108,6 +109,7 @@ export default function Contact() {
     }
     return (
         <div className={classes.root}>
+            <Nav />
             <div className={classes.contentWrapper}>
                 <div className={classes.flexCol} >
                     <div style={{ alignItems: 'center' }} className={classes.flexRow}>

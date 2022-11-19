@@ -64,9 +64,11 @@ export default function Portfolio() {
               <Paper >
                 <ClickAwayListener onClickAway={handleClose}>
                   <MenuList className={classes.menuList} autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
+                    <NavLink className={classes.link} to = '/portfolio/krk-wine'><MenuItem className={classes.menuItem} onClick={handleClose}>KRK Wine</MenuItem></NavLink>
                     <NavLink className={classes.link} to = '/portfolio/kwc-san-diego' ><MenuItem className={classes.menuItem} onClick={handleClose} >KWC San Diego</MenuItem></NavLink>
                     <NavLink className={classes.link} to = '/portfolio/game-of-life'><MenuItem className={classes.menuItem} onClick={handleClose}>Game of Life</MenuItem></NavLink>
                     <NavLink className={classes.link} to = '/portfolio/blackjack'><MenuItem className={classes.menuItem} onClick={handleClose}>Blackjack</MenuItem></NavLink>
+                    
                     {/* <NavLink className={classes.link} to = '/portfolio/human-rights-first'><MenuItem className={classes.menuItem} onClick={handleClose}>Human Rights First</MenuItem></NavLink> */}
                   </MenuList>
                 </ClickAwayListener>
