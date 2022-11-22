@@ -1,4 +1,6 @@
 import { makeStyles } from '@material-ui/styles'
+import { CardColumns } from 'react-bootstrap'
+// import { device } from './device'
 import { colors } from './colors'
 
 export const useStyles = makeStyles(() => ({
@@ -52,8 +54,6 @@ export const useStyles = makeStyles(() => ({
     root: {
         display: 'flex',
         flexDirection: 'column',
-        width: '100vw',
-        flexGrow: 1,
         alignItems: 'center',
         alignContent: 'center',
         justifyContent: 'center',
@@ -80,7 +80,6 @@ export const useStyles = makeStyles(() => ({
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        width: '900px',
         color: colors.dark,
         // backgroundColor:'white',
         marginTop: '25px',
@@ -109,7 +108,6 @@ export const useStyles = makeStyles(() => ({
             margin: '1vh 5% 0vh 5%',
             padding: '0',
             color: 'black',
-            textAlign: 'center',
             textDecoration: 'none',
         },
         '&h4': {
@@ -141,51 +139,45 @@ export const useStyles = makeStyles(() => ({
         // width: '800px',
         height: 'auto',
         borderRadius: '10px',
-        border:'0px solid gray',
+        border: '0px solid gray',
         '& img': {
             borderRadius: '10px',
-            
+
         },
         '&p': {
-            backgroundColor:'gray'
+            backgroundColor: 'gray'
         }
     },
     carouselCardHeader: {
-        border:'inherit',
-        borderBottomLeftRadius:'10px',
-        borderBottomRightRadius:'10px',
+        border: 'inherit',
+        borderBottomLeftRadius: '10px',
+        borderBottomRightRadius: '10px',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        alignItems:'center',
+        alignItems: 'center',
         width: '100%',
-        height:'50px',
+        height: '50px',
         backgroundColor: '#b41e1e',
 
         opacity: '.8',
 
         '& h3': {
-            textAlign:'left',
+            textAlign: 'left',
             color: 'white',
         },
 
     },
 
     cardContainer: {
-        flexWrap: 'wrap',
-        margin: '4rem 0',
         display: 'flex',
+        flexFlow: 'row wrap',
+        margin: '4rem 0',
         flexDirection: 'row',
         justifyContent: 'space-evenly',
-        width: '700px',
-        height: 'auto',
-        gap: '20px 10px'
-    },
-
-    cardWrapper: {
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
+        maxWidth: '700px',
+        // height: 'auto',
+        gap: '20px 10px',
         '& .bullet-row': {
             display: "flex",
             flexDirection: "row",
@@ -195,7 +187,7 @@ export const useStyles = makeStyles(() => ({
             margin: '-10px 0'
         },
         '& .front-side': {
-            backgroundColor: '#5d6b83',
+            backgroundColor: '#2b2d42',
             borderRadius: '6px',
             display: 'flex',
             alignItems: 'center',
@@ -206,7 +198,7 @@ export const useStyles = makeStyles(() => ({
         },
 
         '& .back-side': {
-            backgroundColor: '#2b2d42',
+            backgroundColor: '#5d6b83',
             borderRadius: '6px',
             display: 'flex',
             width: '200px',
@@ -222,7 +214,6 @@ export const useStyles = makeStyles(() => ({
         },
 
         '& .cardBullet': {
-            // backgroundColor: 'green', 
             color: 'white',
             textDecoration: 'none',
         },
@@ -231,9 +222,15 @@ export const useStyles = makeStyles(() => ({
             display: 'inline',
             textAlign: 'start',
             fontSize: "14px !important",
-            // backgroundColor: 'red', 
             color: 'white',
         },
+    },
+
+    cardWrapper: {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+
     },
 
     content: {
@@ -342,7 +339,8 @@ export const useStyles = makeStyles(() => ({
     },
     home: {
         backgroundColor: 'white',
-        borderRadius: '16px'
+        borderRadius: '16px',
+        maxWidth: '800px'
     },
 
     link: {
@@ -403,8 +401,9 @@ export const useStyles = makeStyles(() => ({
     },
     flexRowTight: {
         display: "flex",
+        margin: '1rem 0 ',
         flexDirection: 'row',
-        justifyContent: "center",
+        justifyContent: 'center',
         alignSelf: 'center',
         maxWidth: '1024px',
         width: '100%',
@@ -454,8 +453,18 @@ export const useStyles = makeStyles(() => ({
         width: '800px',
 
     },
+    navToolbar: {
+        display: 'flex',
+        flexDirection: 'row',
+        width: '50%',
+        height: '100%',
+        gap: '20px',
+        justifyContent: 'space-evenly',
+
+    },
     navBar: {
         display: 'flex',
+        borderRadius: '4px',
         flexWrap: 'none',
         flexDirection: 'column',
         justifyContent: 'center',
@@ -469,26 +478,26 @@ export const useStyles = makeStyles(() => ({
         minWidth: '600px',
         boxShadow: 'rgba(0, 0, 0, 0.35) 0px 10px 5px',
     },
-    navToolbar: {
+
+    mobileNavLink: {
+        fontSize: '20px',
+        textDecoration: 'none',
+        margin: '4px 0 4px 5px',
+        color: colors.main
+    },
+    mobileNavLinkContainer: {
         display: 'flex',
-        flexDirection: 'row',
-        width: '50%',
-        height: '100%',
-        gap: '20px',
-        justifyContent: 'space-evenly',
-    },
-    navRoot: {
+        flexDirection: 'column',
+        width:'100px',
+        height:'auto'
 
     },
-
     menuList: {
         zIndex: '200',
-
     },
 
     navButton: {
         fontSize: '100px',
-
     },
 
 
