@@ -6,12 +6,14 @@ import KwcCard from './cards/KwcCard'
 import GolCard from './cards/GolCard'
 import BjCard from './cards/BjCard'
 import ECommerceCard from './cards/eCommerceCard'
+import Nav from './Nav'
 
 export default function Home() {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
+      <Nav />
       <div className={classes.contentWrapper}>
         <div className={classes.home}>
           <div className={classes.header}>

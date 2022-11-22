@@ -9,6 +9,7 @@ import MenuList from '@material-ui/core/MenuList';
 import WorkExperience from '../about/WorkExperience'
 import { useStyles } from './style';
 import { NavLink } from 'react-router-dom'
+// import Nav from '../Nav'
 
 export default function About() {
   const classes = useStyles();
@@ -43,6 +44,7 @@ export default function About() {
 
   return (
     <div className={classes.navRoot}>
+      {/* <Nav /> */}
       <div>
         <Button
           ref={anchorRef}

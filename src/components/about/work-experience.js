@@ -7,8 +7,8 @@ export const workExperience = {
     },
     KWCSD:{
         CompanyName: "Keller Williams Commercial Pacific Commecial Partners",
-        Role: "IT and Development Head",
-        Duties: "Manage an overseas development team of and existing PHP web application. All onsite and remote tech support for the entire KWC Pacific team",
+        Role: "IT & Dev (contract)",
+        Duties: "Manage and oversee development team of and existing PHP web application. As well as all onsite and remote tech support for the entire KWC Pacific team",
         TimeFrame:"2015 - 2020"
     }
 }

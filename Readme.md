@@ -2,8 +2,15 @@
 
 ## under development
 ### curr
-1. remove home button on home page | jsx
-2. blackjack
+* Style Work Experience Page
+* Abstract for KRK Wine 
+* Mobile format
+    1. Pancake Menu
+* Add PubgStats Appllication
+    1. Create card
+    2. Add abstract
+    3. 
+* Blackjack
    1. win conditions
    2. render hit cards (dynamic)
    3. draw conditions
@@ -13,7 +20,6 @@
    7. accounts with bank
    8. animations for cards
    9. sfx
-3. include links to the repos
 
 
 
