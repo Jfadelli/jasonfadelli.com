@@ -42,7 +42,7 @@ export default function MobileNav() {
                     </Fade>
                 )}
             </Popper>
-            <AppBar style={{ backgroundColor: colors.main }} >
+            <AppBar style={{ backgroundColor: colors.main, height:'50px' }} >
                 <Toolbar>
                     <Button onClick={handleClick('bottom-start')}>
                         <IconButton
@@ -53,7 +53,6 @@ export default function MobileNav() {
                             sx={{ mr: 2 }}
                         >
                             <MenuIcon />
-
                         </IconButton>
                     </Button>
                 </Toolbar>
@@ -66,6 +65,5 @@ export default function MobileNav() {
 const styles = {
     container: isMobile => ({
         display: isMobile ? 'flex' : 'none',
-        backgroundColor: 'red'
     })
 }

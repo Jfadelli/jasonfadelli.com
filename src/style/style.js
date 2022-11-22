@@ -1,7 +1,7 @@
 import { makeStyles } from '@material-ui/styles'
-import { CardColumns } from 'react-bootstrap'
 // import { device } from './device'
 import { colors } from './colors'
+import { font } from './fontSizes'
 
 export const useStyles = makeStyles(() => ({
     app: {
@@ -29,27 +29,7 @@ export const useStyles = makeStyles(() => ({
         opacity: '.2',
         transition: 'opacity 2s linear',
     },
-    landingHidden: {
-        // visibility: 'hidden',
-        // opacity: '0',
-        // transition: 'visibility 0s 4s, opacity 2s linear',
-        backroundColor: 'red'
 
-    },
-    enterButton: {
-        zIndex: '2000',
-        margin: 'auto',
-        backgroundColor: 'white',
-        height: '200px',
-        width: '200px',
-        borderRadius: '360px',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: '1.5rem',
-        textDecoration: 'none',
-        color: 'black'
-    },
 
     root: {
         display: 'flex',
@@ -71,7 +51,7 @@ export const useStyles = makeStyles(() => ({
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        fontSize: '2rem',
+        fontSize: font.large,
         margin: '1rem 0 ',
     },
 
@@ -83,10 +63,10 @@ export const useStyles = makeStyles(() => ({
         color: colors.dark,
         // backgroundColor:'white',
         marginTop: '25px',
-        fontSize: '1rem',
+        fontSize: font.medium,
         borderRadius: '6px',
         '& h1': {
-            fontSize: '4rem',
+            fontSize: font.extraLarge,
             padding: '0',
             margin: '5px 0 1vh 0',
             textAlign: 'center',
@@ -94,7 +74,7 @@ export const useStyles = makeStyles(() => ({
         },
         '& h2': {
             display: 'flex',
-            fontSize: '2rem',
+            fontSize: font.medium,
             justifyContent: 'center',
             padding: '0',
             margin: '0 0 1vh',
@@ -102,7 +82,7 @@ export const useStyles = makeStyles(() => ({
             width: 'auto',
         },
         '& h3': {
-            fontSize: '1.5rem',
+            fontSize: font.small,
             fontWeight: '400',
             textAlign: 'center',
             margin: '1vh 5% 0vh 5%',
@@ -119,7 +99,7 @@ export const useStyles = makeStyles(() => ({
             display: 'flex',
             justifyContent: 'center',
             textAlign: 'center',
-            fontSize: '1.5rem',
+            fontSize: font.small,
             maxWidth: '700px'
         }
     },
