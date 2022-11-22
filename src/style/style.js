@@ -5,7 +5,7 @@ export const useStyles = makeStyles(() => ({
     app: {
         position: 'absolute',
         fontFamily: 'Tahoma, Arial, Helvetica, sans-serif',
-        width: '100%',
+        width: '',
         minHeight: '100%',
         left: '0',
         right: '0',
@@ -132,9 +132,43 @@ export const useStyles = makeStyles(() => ({
     },
 
     kwcCarousel: {
+
+    },
+
+    carouselCard: {
         display: 'flex',
-        flexDirection: 'row',
+        flexDirection: 'column',
+        // width: '800px',
+        height: 'auto',
+        borderRadius: '10px',
+        border:'0px solid gray',
+        '& img': {
+            borderRadius: '10px',
+            
+        },
+        '&p': {
+            backgroundColor:'gray'
+        }
+    },
+    carouselCardHeader: {
+        border:'inherit',
+        borderBottomLeftRadius:'10px',
+        borderBottomRightRadius:'10px',
+        display: 'flex',
+        flexDirection: 'column',
         justifyContent: 'center',
+        alignItems:'center',
+        width: '100%',
+        height:'50px',
+        backgroundColor: '#b41e1e',
+
+        opacity: '.8',
+
+        '& h3': {
+            textAlign:'left',
+            color: 'white',
+        },
+
     },
 
     cardContainer: {
@@ -565,7 +599,7 @@ export const useStyles = makeStyles(() => ({
         justifyContent: 'center'
     },
 
-    bjTable: {  
+    bjTable: {
         borderBottomLeftRadius: '512px',  /* 100px of height + 2px of border */
         borderBottomRightRadius: '512px', /* 100px of height + 2px of border */
         margin: '1em 0',
@@ -650,11 +684,11 @@ export const useStyles = makeStyles(() => ({
 
 
     bjExitButton: {
-        display:'flex',
-        opacity:'.4',
-        justifyContent:'center',
-        alignItems:'center',
-        textDecoration:'none',
+        display: 'flex',
+        opacity: '.4',
+        justifyContent: 'center',
+        alignItems: 'center',
+        textDecoration: 'none',
         zIndex: '2000',
         backgroundColor: 'black',
         border: '2px solid',
@@ -668,7 +702,7 @@ export const useStyles = makeStyles(() => ({
         '&:hover': {
             boxShadow: '0 0.5em 0.5em -0.4em var(--hover)',
             transition: '.3s',
-            opacity:'1'
+            opacity: '1'
 
         }
     },

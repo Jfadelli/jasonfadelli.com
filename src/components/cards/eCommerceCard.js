@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Flippy, { FrontSide, BackSide } from 'react-flippy';
 import bjImg from '../../static/slides/krk_wine_sd/krk_wine_ss.png'
 import {FlippyStyle} from './FlippyStyle.js'
+import {NavLink} from 'react-router-dom'
 
 const bullets = [
     "Custom E-Commerce Site",
@@ -12,7 +13,8 @@ const bullets = [
 
 const DefaultCardContents = ({ children }) => (
     <React.Fragment>
-        <a style={{ "text-decoration": "none" }} href='https://krk-wine-sanity-stripe.vercel.app/'>
+        <NavLink style={{ textDecoration: 'none', }} to='/portfolio/krk-wine'>
+        {/* <a style={{ "text-decoration": "none" }} href='https://krk-wine-sanity-stripe.vercel.app/'> */}
             <FrontSide className='front-side'>
                 <h3 className='card-title'>KRK Wine Shop</h3>
                 <img alt='screenshot of KRK Wine SD' style={{ width: '200px' }} src={bjImg} />
@@ -27,7 +29,7 @@ const DefaultCardContents = ({ children }) => (
                     </div>
                 ))}
             </BackSide>
-        </a >
+            </NavLink>
     </React.Fragment >);
 
 const FlippyOnHover = ({ flipDirection = 'horizontal' }) => (
