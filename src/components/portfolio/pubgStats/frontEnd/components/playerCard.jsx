@@ -46,6 +46,7 @@ export default function PlayerCard() {
 
         const card = (
           <>
+          <p>uh-oh, something happened...</p>
             <CardContent >
               <CardMedia
                 style={{ borderRadius: 3 }}

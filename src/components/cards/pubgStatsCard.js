@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import Flippy, { FrontSide, BackSide } from 'react-flippy';
-import bjImg from '../../static/slides/krk_wine_sd/krk_wine_ss.png'
+import pubgStatsImg from '../../static/slides/pubg-stats/pubg-stats-home.png'
 import {FlippyStyle} from './FlippyStyle.js'
 import {NavLink} from 'react-router-dom'
 
 const bullets = [
-    "Custom E-Commerce Site",
-    "Fully Dynamic",
-    "User Friendly CMS Interface",
-    "Unique Styling",
+    "API consuming web app",
+    "Displays and updates player stats in real time",
+    "Custom backend API to connect FE with PUBG's servers",
+
 ]
 
 const DefaultCardContents = ({ children }) => (
@@ -16,7 +16,7 @@ const DefaultCardContents = ({ children }) => (
         <NavLink style={{ textDecoration: 'none', }} to='/portfolio/pubg-stats'>
             <FrontSide className='front-side'>
                 <h3 className='card-title'>PUBG Stats</h3>
-                <img alt='screenshot of PUBG Stats app' style={{ width: '200px' }} src={bjImg} />
+                <img alt='screenshot of PUBG Stats app' style={{ width: '200px' }} src={pubgStatsImg} />
 
             </FrontSide>
 
