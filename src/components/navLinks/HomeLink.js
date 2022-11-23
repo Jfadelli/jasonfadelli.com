@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
-import { useStyles } from './style';
+import { useStyles } from './navStyle';
 import { NavLink } from 'react-router-dom'
 
 export default function ServicesOffered() {

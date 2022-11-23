@@ -11,9 +11,9 @@ import Paper from '@material-ui/core/Paper'
 
 import { NavLink } from 'react-router-dom'
 
-import { useMediaQuery } from '../hooks/mediaQuery'
-import { useStyles } from '../style/style';
-import { colors } from '../style/colors'
+import { useMediaQuery } from '../../hooks/mediaQuery'
+import { useStyles } from '../../style/style';
+import { colors } from '../../style/colors'
 
 export default function MobileNav() {
     const isMobile = useMediaQuery('(max-width: 769px)');
@@ -42,9 +42,9 @@ export default function MobileNav() {
                     </Fade>
                 )}
             </Popper>
-            <AppBar style={{ backgroundColor: colors.main, height:'50px' }} >
+            <AppBar style={{ backgroundColor: colors.bg, height:'60px'}} >
                 <Toolbar>
-                    <Button onClick={handleClick('bottom-start')}>
+                    <Button onClick={handleClick('bottom-start')} style={{color:'green', position:'static'}}>
                         <IconButton
                             size="large"
                             edge="start"
@@ -65,5 +65,6 @@ export default function MobileNav() {
 const styles = {
     container: isMobile => ({
         display: isMobile ? 'flex' : 'none',
+        margin: isMobile ? '0 0 50px 0' : 'none'
     })
 }

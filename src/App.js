@@ -11,13 +11,15 @@ import {
 // Components
 // import Landing from './components/Landing'
 // import Nav from './components/Nav'
-import Home from './components/Home'
+import Home from './components/home/Home'
 
 // Portfolio
 import Kwcsd from './components/portfolio/kwcsd/Kwcsd'
+import KrkWine from './components/portfolio/krkWine/krkWine';
+import PubgStats from './components/portfolio/pubgStats/frontEnd/PubgStats'
 import Gol from './components/portfolio/gol/Gol'
 import Blackjack from './components/portfolio/blackjack/Blackjack'
-import KrkWine from './components/portfolio/ecommerce/krkWine';
+
 
 // Contact
 import Contact from './components/contact/ContactForm'
@@ -50,6 +52,7 @@ function App() {
               {/* about */}
               <Route path='/portfolio/kwc-san-diego' component={Kwcsd} />
               <Route path='/portfolio/krk-wine' component={KrkWine} />
+              <Route path='/portfolio/pubg-stats' component={PubgStats} />
               <Route path='/portfolio/game-of-life' component={Gol} />
               <Route path='/portfolio/blackjack' component={Blackjack} />
 

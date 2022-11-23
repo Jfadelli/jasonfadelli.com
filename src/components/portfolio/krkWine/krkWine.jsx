@@ -1,7 +1,7 @@
 import React from 'react'
 import { useStyles } from '../../../style/style'
 import KrkCarousel from './KrkCarousel'
-import Nav from '../../Nav'
+import Nav from '../../nav/Nav'
 
 import { krkWineStory } from './krkWineStory'
 import { stackAndFeatures } from './stackAndFeatures'

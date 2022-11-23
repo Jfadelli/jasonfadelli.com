@@ -2,7 +2,7 @@ import React from 'react'
 import { useStyles } from '../../style/style'
 import SocialMedia from '../socialMedia/socialMedia'
 import { LifeStory } from './life-story'
-import Nav from '../Nav'
+import Nav from '../nav/Nav'
 
 export default function PeronalLife() {
     const classes = useStyles()

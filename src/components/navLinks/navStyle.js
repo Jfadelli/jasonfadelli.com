@@ -22,7 +22,11 @@ export const useStyles = makeStyles((theme) => ({
     margin: '0 20% 0 20%',
     position: 'relative',
     zIndex: '6000',
-    textTransform: 'none'
+    textTransform: 'none',
+    '&:hover':{
+      backgroundColor:colors.white,
+      color:colors.main
+    },
   },
   link: {
     color: colors.dark,

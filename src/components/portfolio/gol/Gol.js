@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { useStyles } from '../../../style/style'
 import './game.css'
 import Game from './game'
-import Nav from '../../Nav'
+import Nav from '../../nav/Nav'
 
 export default function Gol() {
     const classes = useStyles()

@@ -6,10 +6,10 @@ import Paper from '@material-ui/core/Paper';
 import Popper from '@material-ui/core/Popper';
 import MenuItem from '@material-ui/core/MenuItem';
 import MenuList from '@material-ui/core/MenuList';
-import WorkExperience from '../about/WorkExperience'
-import { useStyles } from './style';
+
+import { useStyles } from './navStyle';
 import { NavLink } from 'react-router-dom'
-// import Nav from '../Nav'
+
 
 export default function About() {
   const classes = useStyles();
@@ -40,11 +40,11 @@ export default function About() {
   React.useEffect(() => {
     if (prevOpen.current === true && open === false) {
       anchorRef.current.focus();
-    }prevOpen.current = open; }, [open]);
+    } prevOpen.current = open;
+  }, [open]);
 
   return (
-    <div className={classes.navRoot}>
-      {/* <Nav /> */}
+    <div >
       <div>
         <Button
           ref={anchorRef}
@@ -52,9 +52,10 @@ export default function About() {
           aria-haspopup="true"
           onClick={handleToggle}
           className={classes.navButton}
+
         >About</Button>
 
-        <Popper className={classes.popper} open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
+        <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
           {({ TransitionProps, placement }) => (
             <Grow
               {...TransitionProps}
@@ -63,15 +64,8 @@ export default function About() {
               <Paper>
                 <ClickAwayListener onClickAway={handleClose}>
                   <MenuList className={classes.menuList} autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
-                    <NavLink className={classes.link} to = '/about/work-experience'><MenuItem className={classes.menuItem} onClick={handleClose}>Work Experience</MenuItem></NavLink>
-                    <NavLink className={classes.link} to = '/about/personal-life'><MenuItem className={classes.menuItem} onClick={handleClose}>Personal Life</MenuItem></NavLink>
-
-                    {/* <NavLink className={classes.link} to = '/about/professional-life'><MenuItem className={classes.menuItem}  onClick={handleClose}>Professional Life</MenuItem></NavLink> */}
-
-                    {/* <NavLink className={classes.link} to = '/about/education'><MenuItem className={classes.menuItem} onClick={handleClose}>Education</MenuItem></NavLink> */}
-
-                    {/* <NavLink className={classes.link} to = '/about/Kikis-Coding'><MenuItem className={classes.menuItem} onClick={handleClose}>kikis-coding</MenuItem></NavLink> */}
-
+                    <NavLink className={classes.link} to='/about/work-experience'><MenuItem className={classes.menuItem} onClick={handleClose}>Work Experience</MenuItem></NavLink>
+                    <NavLink className={classes.link} to='/about/personal-life'><MenuItem className={classes.menuItem} onClick={handleClose}>Personal Life</MenuItem></NavLink>
                   </MenuList>
                 </ClickAwayListener>
               </Paper>

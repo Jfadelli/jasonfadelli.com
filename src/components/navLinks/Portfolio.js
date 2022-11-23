@@ -6,7 +6,7 @@ import Paper from '@material-ui/core/Paper';
 import Popper from '@material-ui/core/Popper';
 import MenuItem from '@material-ui/core/MenuItem';
 import MenuList from '@material-ui/core/MenuList';
-import { useStyles } from './style';
+import { useStyles } from './navStyle';
 import { NavLink } from 'react-router-dom';
 
 export default function Portfolio() {
@@ -66,6 +66,7 @@ export default function Portfolio() {
                   <MenuList className={classes.menuList} autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
                     <NavLink className={classes.link} to = '/portfolio/krk-wine'><MenuItem className={classes.menuItem} onClick={handleClose}>KRK Wine</MenuItem></NavLink>
                     <NavLink className={classes.link} to = '/portfolio/kwc-san-diego' ><MenuItem className={classes.menuItem} onClick={handleClose} >KWC San Diego</MenuItem></NavLink>
+                    <NavLink className={classes.link} to = '/portfolio/pubg-stats'><MenuItem className={classes.menuItem} onClick={handleClose}>PubgStats</MenuItem></NavLink>
                     <NavLink className={classes.link} to = '/portfolio/game-of-life'><MenuItem className={classes.menuItem} onClick={handleClose}>Game of Life</MenuItem></NavLink>
                     <NavLink className={classes.link} to = '/portfolio/blackjack'><MenuItem className={classes.menuItem} onClick={handleClose}>Blackjack</MenuItem></NavLink>
                     

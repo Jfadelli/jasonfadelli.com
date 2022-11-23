@@ -2,7 +2,7 @@ import React from 'react'
 import { useStyles } from '../../style/style'
 import SocialMedia from '../socialMedia/socialMedia'
 import { workExperience } from './work-experience'
-import Nav from '../Nav'
+import Nav from '../nav/Nav'
 
 
 export default function WorkExperience() {

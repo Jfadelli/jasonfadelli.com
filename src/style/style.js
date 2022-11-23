@@ -7,10 +7,12 @@ export const useStyles = makeStyles(() => ({
     app: {
         position: 'absolute',
         fontFamily: 'Tahoma, Arial, Helvetica, sans-serif',
-        width: '',
+        width: 'auto',
         minHeight: '100%',
         left: '0',
         right: '0',
+        // overflow:'hidden',
+
     },
 
     landing: {
@@ -38,7 +40,15 @@ export const useStyles = makeStyles(() => ({
         alignContent: 'center',
         justifyContent: 'center',
     },
-
+    bg:{
+        backgroundColor:'rgb(204, 204, 204, .3)',
+        width:'900px',
+        display:'flex',
+        flexDirection:'column',
+        justifyContent:'center',
+        alignItems:'center',
+        boxShadow: '8px 8px 16px 0 rgba(0, 0, 0, 0.1)',
+    },
     hero: {
         maxWidth: '1024px',
         borderRadius: '10px',
@@ -61,10 +71,12 @@ export const useStyles = makeStyles(() => ({
         flexDirection: 'column',
         justifyContent: 'center',
         color: colors.dark,
-        // backgroundColor:'white',
+        // backgroundColor:'green',
         marginTop: '25px',
         fontSize: font.medium,
         borderRadius: '6px',
+        boxShadow: '8px 8px 16px 0 rgba(0, 0, 0, 0.5)',
+        width: '800px',
         '& h1': {
             fontSize: font.extraLarge,
             padding: '0',
@@ -319,7 +331,7 @@ export const useStyles = makeStyles(() => ({
     },
     home: {
         backgroundColor: 'white',
-        borderRadius: '16px',
+        borderRadius: '8px',
         maxWidth: '800px'
     },
 
@@ -358,7 +370,7 @@ export const useStyles = makeStyles(() => ({
         margin: '1vh auto 4vh auto',
         border: '1px dotted ' + colors.dark,
         borderRadius: '90px',
-        maxWidth: '1024px',
+        maxWidth: '700px',
         width: '100%'
     },
 
@@ -370,7 +382,6 @@ export const useStyles = makeStyles(() => ({
         alignSelf: 'center',
         maxWidth: '1024px',
         width: '100%',
-
     },
     flexCol: {
         display: "flex",
@@ -441,6 +452,7 @@ export const useStyles = makeStyles(() => ({
         gap: '20px',
         justifyContent: 'space-evenly',
 
+
     },
     navBar: {
         display: 'flex',
@@ -457,6 +469,7 @@ export const useStyles = makeStyles(() => ({
         width: '100%',
         minWidth: '600px',
         boxShadow: 'rgba(0, 0, 0, 0.35) 0px 10px 5px',
+        
     },
 
     mobileNavLink: {
@@ -476,81 +489,15 @@ export const useStyles = makeStyles(() => ({
         zIndex: '200',
     },
 
-    navButton: {
-        fontSize: '100px',
-    },
+    // navButton: {
+    //     fontSize: '100px',
+    //     color:'pink'
+    // },
 
 
     // nav buttons and links are in navbar '../components/navbar/style.js'
 
-    // contact us
-    contactUs: {
-        alignSelf: 'center',
-        display: 'flex',
-        height: '600px',
-        flexDirection: 'column',
-        textAlign: 'left',
-        '& label': {
-            fontSize: '1.25rem',
-            margin: '0 0 .5rem',
-            maxWidth: '400px',
-            textAlign: 'center',
-        },
-        '& button': {
-            margin: '2rem 2rem 2rem 150px',
-            fontSize: '1.25rem',
-            fontWeight: '600',
-            height: '40px',
-            width: '120px',
-            color: colors.main,
-            backgroundColor: colors.contactColor1,
-            border: '2px dotted ' + colors.main,
-            borderRadius: '4px',
-            '&:hover': {
-                color: colors.dark,
-                backgroundColor: colors.contactColor2,
-                border: '2px dotted ' + colors.dark,
-                cursor: 'pointer'
 
-            }
-        },
-        '& input': {
-            display: 'flex',
-            margin: '0 0 2rem',
-            outline: 'none',
-            width: 'auto',
-            height: '2.0rem',
-            border: '1px solid ' + colors.main,
-            borderRadius: '4px',
-            fontSize: '1.25rem',
-            maxWidth: '400px',
-            minWidth: '400px',
-        },
-
-        '& textarea': {
-            display: 'block',
-            width: ' 400px',
-            overflow: 'hidden',
-            maxWidth: '380px',
-            minHeight: '6rem',
-            lineHeight: '20px',
-            fontSize: '1.5rem',
-            backgroundColor: colors.alt,
-            border: '1px solid ' + colors.dark,
-            borderRadius: '6px',
-            padding: '10px',
-            color: 'white',
-        }
-
-    },
-    contactImg: {
-        maxWidth: '500px',
-        maxHeight: '500px',
-        margin: ' 0 20px',
-        borderRadius: '6px',
-        boxShadow: '0 10px 10px 2px rgba(0,0,0,0.2)',
-        transition: '0.3s',
-    },
     fadeEnter: {
         opacity: '0'
     },

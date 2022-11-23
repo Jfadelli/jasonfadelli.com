@@ -7,6 +7,7 @@ const colors = {
     bg: '#eeeeee', // ivory
     contactColor1: '#8ebbc1',
     contactColor2:'#d1f3ff',
+    white:'#ffffff',
 }
 
 export { 

@@ -1,15 +1,15 @@
 import React from 'react';
 import Toolbar from '@material-ui/core/Toolbar';
 
-import { useMediaQuery } from '../hooks/mediaQuery'
-import { useStyles } from '../style/style'
+import { useMediaQuery } from '../../hooks/mediaQuery'
+import { useStyles } from '../../style/style'
 
 import MobileNav from './mobileNav'
 
-import Portfolio from './navLinks/Portfolio.js'
-import About from './navLinks/About.js'
-import Contact from './navLinks/Contact.js'
-import Home from './navLinks/HomeLink.js'
+import Portfolio from '../navLinks/Portfolio.js'
+import About from '../navLinks/About.js'
+import Contact from '../navLinks/Contact.js'
+import Home from '../navLinks/HomeLink.js'
 
 export default function Nav() {
   const isRow = useMediaQuery('(min-width: 769px)');
@@ -39,7 +39,7 @@ const styles = {
     height: isRow ? 'auto' : '1px',
     alignContent: isRow ? '' : 'center',
     width: '100%',
-    zIndex: '0'
+    zIndex: '2'
   })
 
 };
