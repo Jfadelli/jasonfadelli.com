@@ -42,7 +42,7 @@ export default function MobileNav() {
                     </Fade>
                 )}
             </Popper>
-            <AppBar style={{ backgroundColor: colors.bg, height:'60px'}} >
+            <AppBar style={{ backgroundColor: colors.navBarBg, height:'60px'}} >
                 <Toolbar>
                     <Button onClick={handleClick('bottom-start')} style={{color:'green', position:'static'}}>
                         <IconButton

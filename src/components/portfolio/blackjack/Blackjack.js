@@ -10,12 +10,10 @@ export default function Blackjack() {
     const classes = useStyles()
     return (
         <div className={classes.root} style={{backgroundColor:localBackgroundColorVar, height:'100vh', opactiy:'.9'}}>
-            {/* <Nav /> */}
-            <div className={classes.contentWrapper}>
                 <div className={classes.content}>
                     <Table style={{zIndex:'100'}}/>
                 </div>
-            </div>
+
         </div>
     )
 }

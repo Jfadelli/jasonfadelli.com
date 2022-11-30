@@ -3,6 +3,7 @@ import Notifications, { notify } from 'react-notify-toast';
 import { useStyles } from '../../../../style/style'
 import { playerChangeSuite, dealerChangeSuite } from './suiteHandler'
 import { NavLink } from 'react-router-dom';
+// import BjControls from './BjControls.jsx'
 
 import PlayerHand from './playerHand'
 import DealerHand from './dealerHand'
@@ -15,6 +16,8 @@ function Table() {
     const [playerScore, setPlayerScore] = useState([])
     const [dealerScore, setDealerScore] = useState([])
     const [deckInPlay, setDeckInPlay] = useState([])
+    const [gameOver, setGameOver] = useState(false)
+
 
     let suites = ['hearts', 'diamonds', 'clubs', 'spades']
     let ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
@@ -31,6 +34,7 @@ function Table() {
 
     const newGame = () => {
         deck = []
+        setGameOver(false)
         let i;
         let j;
         for (i = 0; i < ranks.length; i++) {
@@ -45,6 +49,8 @@ function Table() {
         newGame()
         let dealerHand = [];
         let playerHand = [];
+        
+
         let randomIndex;
         let currCard;
 
@@ -73,6 +79,12 @@ function Table() {
         setDeckInPlay(deck)
         checkPoints()
     }
+
+    // const bet = () => {
+    //     try {
+
+    //     } catch { void 0}
+    // }
 
 
 
@@ -144,6 +156,7 @@ function Table() {
             if (playerScore > 21) {
                 let bustColor = { background: '#FFFFFF', text: "#FF205D" };
                 notify.show('You Busted!', "custom", '1000', bustColor)
+                setGameOver(true)
             } if (playerHandSize < 3) {
                 notify.hide()
             }
@@ -153,11 +166,14 @@ function Table() {
     }
 
     const endConditions = () => {
+        
         let winColor = { background: '#FFFFFF', text: "#FF205D" };
         let loseColor = { background: '#FFFFFF', text: "#FF205D" };
 
         if (dealerScore > 21) {
             notify.show('Winner Winner!', "custom", '1000', winColor)
+        } else if (playerScore > 21) {
+            notify.show('You busted... deal again?', "custom","1000",loseColor)
         } else if (playerScore > dealerScore) {
             notify.show('Winner Winner!', "custom", '1000', winColor)
         } else if (playerScore < dealerScore) {
@@ -192,18 +208,6 @@ function Table() {
 
 
     useEffect(() => {
-        // circularText("BLACKJACK", 500, 0);
-        // function circularText(txt, radius, classIndex) {
-        //     txt = txt.split("");
-        //     classIndex = document.getElementsByClassName("circTxt")[classIndex];
-        //     var deg = 60 / txt.length,
-        //         origin = -27;
-        //     txt.forEach((ea) => {
-        //         ea = `<p style='font-size: 45px;height:${radius}px;position:absolute;transform:rotate(${origin}deg);transform-origin:0 100%;'>${ea}</p>`;
-        //         classIndex.innerHTML += ea;
-        //         origin += deg;
-        //     });
-        // }
         if (playerHandState.length > 2) {
             playerChangeSuite({ playerHandState })
         }
@@ -214,7 +218,6 @@ function Table() {
             isDisabled()
         }
         checkPoints()
-
     });
 
 
@@ -248,7 +251,7 @@ function Table() {
                         <button className={classes.bjButton} onClick={deal}> Deal </button>
                     </div>
                     <div className={classes.bjButtonMiddle}>
-                        <button className={classes.bjButton} onClick={playerHit}>Hit</button>
+                        <button className={classes.bjButton} onClick={gameOver ? null: playerHit}>Hit</button>
                     </div>
                     <div className={classes.bjButtonRight}>
                         <button className={classes.bjButton} onClick={playerStay}>Stay</button>

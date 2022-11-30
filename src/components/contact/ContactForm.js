@@ -22,6 +22,9 @@ const initialFormErrors = {
 }
 export default function Contact() {
     const isHidden = useMediaQuery('(min-width: 769px)');
+    const isMobile = useMediaQuery('(min-width: 769px)');
+    const isMobileContent = useMediaQuery('(min-width: 769px)');
+
     const [formValues, setFormValues] = useState(initialValues)
     const [formErrors, setFormErrors] = useState(initialFormErrors);
     const [disabled, setDisabled] = useState(true);
@@ -86,8 +89,9 @@ export default function Contact() {
 
     return (
         <div className={classes.contactRoot}>
-            <Nav />
-            <div className={classes.contactContentWrapper}>
+            <div className={classes.bg} style={bgMediaQuery.container(isMobile)}>
+                <Nav />
+                <div className={classes.contactContentWrapper} style={contentMediaQuery.container(isMobileContent)}>
 
                     <form className={classes.contactUs} onSubmit={onSubmitHandler}>
                         <label>Full Name</label>
@@ -130,14 +134,29 @@ export default function Contact() {
                         <div style={{ color: 'red' }}>{formErrors.email}</div>
                         <div style={{ color: 'red' }}>{formErrors.phone}</div>
                     </form>
-                <img style={styles.container(isHidden)} className={classes.contactImg} alt="generic team working together" src={mail} />
+                    <img style={styles.container(isHidden)} className={classes.contactImg} alt="generic team working together" src={mail} />
                 </div>
             </div>
+        </div>
 
     )
 }
 const styles = {
     container: isHidden => ({
         display: isHidden ? 'flex' : 'none',
+    })
+};
+
+const bgMediaQuery = {
+    container: isMobileBg => ({
+        width: isMobileBg ? '850px' : 'auto',
+        height: isMobileBg ? '100vh' : 'auto'
+    })
+};
+
+const contentMediaQuery = {
+    container: isMobileContent => ({
+        width: isMobileContent ? '800px' : '200px',
+        // padding: isMobileContent ? '0 0 0 0':'10px '
     })
 };

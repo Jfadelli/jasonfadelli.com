@@ -11,49 +11,23 @@ export const useStyles = makeStyles(() => ({
         minHeight: '100%',
         left: '0',
         right: '0',
-        // overflow:'hidden',
 
     },
-
-    landing: {
-        // position: 'absolute',
-        // top: 50,
-        // left: 0,
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: 'black',
-        width: '100vw',
-        height: '95vh',
-        // overflow: 'hidden',
-        zIndex: '1000',
-        visibility: 'visible',
-        opacity: '.2',
-        transition: 'opacity 2s linear',
-    },
-
-
     root: {
+        backgroundColor: colors.main,
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        alignContent: 'center',
-        justifyContent: 'center',
+        minHeight:'100vh',
     },
     bg:{
         backgroundColor:'rgb(204, 204, 204, .3)',
-        width:'900px',
+        maxWidth:'850px',
         display:'flex',
         flexDirection:'column',
         justifyContent:'center',
         alignItems:'center',
         boxShadow: '8px 8px 16px 0 rgba(0, 0, 0, 0.1)',
-    },
-    hero: {
-        maxWidth: '1024px',
-        borderRadius: '10px',
-        margin: '20px auto',
-        '& @media (max-width 1024px)': { display: 'none' }
     },
 
     header: {
@@ -71,12 +45,12 @@ export const useStyles = makeStyles(() => ({
         flexDirection: 'column',
         justifyContent: 'center',
         color: colors.dark,
-        // backgroundColor:'green',
+        backgroundColor:colors.bg,
         marginTop: '25px',
         fontSize: font.medium,
         borderRadius: '6px',
         boxShadow: '8px 8px 16px 0 rgba(0, 0, 0, 0.5)',
-        width: '800px',
+        maxWidth: '800px',
         '& h1': {
             fontSize: font.extraLarge,
             padding: '0',
@@ -119,10 +93,6 @@ export const useStyles = makeStyles(() => ({
     headerBody: {
         display: 'flex',
         justifyContent: 'center',
-    },
-
-    kwcCarousel: {
-
     },
 
     carouselCard: {
@@ -179,7 +149,7 @@ export const useStyles = makeStyles(() => ({
             margin: '-10px 0'
         },
         '& .front-side': {
-            backgroundColor: '#2b2d42',
+            backgroundColor: colors.main,
             borderRadius: '6px',
             display: 'flex',
             alignItems: 'center',
@@ -190,7 +160,7 @@ export const useStyles = makeStyles(() => ({
         },
 
         '& .back-side': {
-            backgroundColor: '#5d6b83',
+            backgroundColor: '#2b2d42',
             borderRadius: '6px',
             display: 'flex',
             width: '200px',
@@ -330,7 +300,7 @@ export const useStyles = makeStyles(() => ({
         maxWidth: '1024px',
     },
     home: {
-        backgroundColor: 'white',
+        backgroundColor: colors.bg,
         borderRadius: '8px',
         maxWidth: '800px'
     },
@@ -456,12 +426,13 @@ export const useStyles = makeStyles(() => ({
     },
     navBar: {
         display: 'flex',
-        borderRadius: '4px',
+        borderBottomLeftRadius: '4px',
+        borderBottomRightRadius: '4px',
         flexWrap: 'none',
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: colors.bg,
+        backgroundColor: colors.navBarBg,
         height: '40px',
         marign: '0 0 1vh 0',
         position: 'relative',

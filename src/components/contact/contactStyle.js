@@ -8,15 +8,20 @@ export const useStyles = makeStyles(() => ({
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        alignContent: 'center',
-        justifyContent: 'center',
+        justifyContent: 'flex-start',
+        backgroundColor: colors.main,
+        height:'100vh',
+        width:'auto'
+
     },
     contactContentWrapper: {
+        margin:' 0 0 80px 0',
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems:'center',
         color: colors.dark,
+        backgroundColor:'white',
         marginTop: '50px',
         fontSize: font.medium,
         borderRadius: '6px',
@@ -28,18 +33,10 @@ export const useStyles = makeStyles(() => ({
         width: '900px',
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'center',
         alignItems: 'center',
         boxShadow: '8px 8px 16px 0 rgba(0, 0, 0, 0.1)',
     },
-    flexRow: {
-        display: "flex",
-        flexDirection: 'row',
-        justifyContent: "space-evenly",
-        alignSelf: 'center',
-        maxWidth: '1024px',
-        width: '100%',
-    },
+
     // contact us
     contactUs: {
         alignSelf: 'center',

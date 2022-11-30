@@ -1,4 +1,5 @@
 import React from 'react'
+import { useMediaQuery } from '@material-ui/core';
 import { useStyles } from '../../../style/style'
 
 import Nav from '../../nav/Nav'
@@ -6,9 +7,11 @@ import KwcCarousel from './KwcCarousel'
 
 export default function Kwcsd() {
     const classes = useStyles()
+    const isMobile = useMediaQuery('(min-width: 769px)');
 
     return (
         <div className={classes.root}>
+            <div className={classes.bg} style={mediaQueryStyle.container(isMobile)}>
             <Nav />
             <div className={classes.contentWrapper}>
 
@@ -66,9 +69,14 @@ export default function Kwcsd() {
                     <KwcCarousel />
                 </div>
 
-                {/* </div> */}
+                </div>
             </div>
         </div >
     )
 }
 
+const mediaQueryStyle = {
+    container: isMobile => ({
+        width: isMobile ? '850px' : 'auto',
+    })
+  };

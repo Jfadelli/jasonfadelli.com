@@ -4,10 +4,12 @@ const colors = {
     alt: '#EBF1FF', // Magnolia'
     light: '#F8FAF0', // ivory
     accent: '#709DFF', // Red Crayola
-    bg: '#eeeeee', // ivory
+    bg: '#dddddd', // ivory
     contactColor1: '#8ebbc1',
     contactColor2:'#d1f3ff',
     white:'#ffffff',
+    navBarBg:'#eeeeee'
+
 }
 
 export { 
